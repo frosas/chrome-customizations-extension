@@ -1,0 +1,8 @@
+{
+  "name": "chrome-customizations-extension",
+  "version": "0.0.0",
+  "dependencies": {
+    "marked": "^0.3.2",
+    "webpack": "^1.4.9"
+  }
+}
