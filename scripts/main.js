@@ -38,6 +38,7 @@ onBubble(function (element) {
         renderedElement.innerHTML = marked(textarea.value);
     };
 
+    element.style.height = 'auto';
     element.contentDocument.querySelector('html').style.setProperty('overflow', 'auto', 'important');
     element.contentDocument.body.style.setProperty('overflow', 'auto', 'important');
     
