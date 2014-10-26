@@ -37,8 +37,12 @@ onBubble(function (element) {
     var render = function () {
         renderedElement.innerHTML = marked(textarea.value);
     };
+
+    element.contentDocument.querySelector('html').style.setProperty('overflow', 'auto', 'important');
+    element.contentDocument.body.style.setProperty('overflow', 'auto', 'important');
     
     var textarea = getBubbleTextarea(element);
+    textarea.style.height = '300px';
     textarea.style.font = '14px Ubuntu Mono, monospace';
     textarea.style.display = 'none';
     textarea.addEventListener('change', render);
