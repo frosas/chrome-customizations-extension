@@ -3,6 +3,6 @@
 - 
 ```
 $ npm install
-$ webpack [-w]
+$ node_modules/.bin/webpack [-w]
 ```
 - Chrome → Extensions → Load unpacked extension
