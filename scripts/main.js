@@ -2,15 +2,22 @@ var marked = require('marked');
 
 var lastTaskBubbleSeen;
 
+var toArray = function (collection) {
+    return [].map.call(collection, function (item) { return item; });
+};
+
 var onBubble = function (callback) {
-    // TODO Watch changes in the DOM
-    setInterval(function() {
-        var element = document.querySelector('.bubble iframe');
-        if (element && element !== lastTaskBubbleSeen) {
-            lastTaskBubbleSeen = element;
-            callback(element);
-        }
-    }, 500);
+    var observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
+            toArray(mutation.addedNodes)
+                .filter(function (node) { 
+                    return node.nodeName == 'IFRAME' && 
+                        node.parentNode.classList.contains('tc-bubble-framecontainer'); 
+                })
+                .forEach(callback);
+        });
+    });
+    observer.observe(document.body, {childList: true, subtree: true});
 };
 
 /**
