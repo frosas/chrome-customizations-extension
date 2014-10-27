@@ -37,15 +37,13 @@ onBubble(function (element) {
     var render = function () {
         renderedElement.innerHTML = marked(textarea.value);
     };
-
-    element.style.height = 'auto';
-    element.contentDocument.querySelector('html').style.setProperty('overflow', 'auto', 'important');
-    element.contentDocument.body.style.setProperty('overflow', 'auto', 'important');
     
+    var link = element.contentDocument.createElement('link');
+    link.rel = 'stylesheet';
+    link.href = chrome.extension.getURL('styles/bubble.css');
+    element.contentDocument.head.appendChild(link);
+
     var textarea = getBubbleTextarea(element);
-    textarea.style.height = '200px';
-    textarea.style.font = '14px Ubuntu Mono, monospace';
-    textarea.style.display = 'none';
     textarea.addEventListener('change', render);
     textarea.addEventListener('keyup', render);
     
