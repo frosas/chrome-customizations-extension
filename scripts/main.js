@@ -55,7 +55,12 @@ onBubble(function (element) {
     textarea.addEventListener('keyup', render);
     
     var renderedElement = document.createElement('div');
-    renderedElement.addEventListener('click', toggleEdition);
+    renderedElement.addEventListener('click', function (event) {
+        // Ignore events on element with a default action
+        if (event.target.nodeName == 'A') return; 
+        
+        toggleEdition();
+    });
     textarea.parentNode.appendChild(renderedElement);
     
     render();

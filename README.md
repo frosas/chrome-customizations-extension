@@ -9,9 +9,9 @@ $ node_modules/.bin/webpack [-w]
 
 ### TODO
 
-- How to use CSS to style the bubble `<iframe>`?
+- ~~How to use CSS to style the bubble `<iframe>`?~~
 - Improve code structure
-- Avoid toggling edition mode when a link is clicked
+- ~~Avoid toggling edition mode when a link is clicked~~
 - `TODO`s in the code
 - ~~Enable [checkboxes](https://github.com/chjj/marked/issues/107)? Probably it's enough having linethroughs~~
 - `Esc` to close the textarea when in edit mode
