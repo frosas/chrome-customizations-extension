@@ -1,7 +1,7 @@
 module.exports = {
-    entry: './scripts/main',
+    entry: './scripts/google-calendar',
     output: {
         path: 'scripts/dist',
-        filename: 'main.js'
+        filename: 'google-calendar.js'
     }
 };

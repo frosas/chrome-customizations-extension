@@ -47,7 +47,7 @@ onBubble(function (element) {
     
     var link = element.contentDocument.createElement('link');
     link.rel = 'stylesheet';
-    link.href = chrome.extension.getURL('styles/bubble.css');
+    link.href = chrome.extension.getURL('styles/google-calendar-bubble.css');
     element.contentDocument.head.appendChild(link);
 
     var textarea = getBubbleTextarea(element);

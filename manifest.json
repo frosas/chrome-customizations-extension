@@ -4,10 +4,10 @@
     "version": "0.1",
     "content_scripts": [{
         "matches": ["https://www.google.com/calendar/render*"],
-        "js": ["scripts/dist/main.js"],
-        "css": ["styles/main.css"]
+        "js": ["scripts/dist/google-calendar.js"],
+        "css": ["styles/google-calendar.css"]
     }],
     "web_accessible_resources": [
-        "styles/bubble.css"
+        "styles/google-calendar-bubble.css"
     ]
 }
