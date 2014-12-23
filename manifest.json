@@ -2,11 +2,16 @@
     "manifest_version": 2,
     "name": "Personal customizations",
     "version": "0.1",
-    "content_scripts": [{
-        "matches": ["https://www.google.com/calendar/render*"],
-        "js": ["scripts/dist/google-calendar.js"],
-        "css": ["styles/google-calendar.css"]
-    }],
+    "content_scripts": [
+        {
+            "matches": ["https://www.google.com/calendar/render*"],
+            "js": ["scripts/dist/google-calendar.js"],
+            "css": ["styles/google-calendar.css"]
+        }, {
+            "matches": ["https://trello.com/*"],
+            "css": ["styles/trello.css"]
+        }
+    ],
     "web_accessible_resources": [
         "styles/google-calendar-bubble.css"
     ]
