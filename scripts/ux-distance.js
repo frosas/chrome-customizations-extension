@@ -7,6 +7,7 @@
     scoreElement.style.position = 'fixed';
     scoreElement.style.bottom = 0;
     scoreElement.style.right = 0;
+    scoreElement.style.color = '#000';
     scoreElement.style.backgroundColor = '#fff';
     scoreElement.style.padding = '5px';
     scoreElement.style.zIndex = '999';
