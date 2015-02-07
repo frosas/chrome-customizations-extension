@@ -9,6 +9,7 @@
     scoreElement.style.right = 0;
     scoreElement.style.backgroundColor = '#fff';
     scoreElement.style.padding = '5px';
+    scoreElement.style.zIndex = '999';
     document.body.appendChild(scoreElement);
     
     var getScore = function () {
