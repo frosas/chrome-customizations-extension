@@ -48,8 +48,7 @@
         var currentPosition = [event.screenX, event.screenY];
         var distance = getDistance(lastMousePosition, currentPosition);
         lastMousePosition = currentPosition;
-        if (!distance) return;
-        addAction({
+        distance && addAction({
             type: 'mouse move', 
             distance: distance,
             score: distance / 20 // 100 pixels → 5 points
@@ -58,5 +57,18 @@
     
     document.addEventListener('keydown', function () {
         addAction({type: 'key down', score: 3});
+    });
+    
+    var lastScrollPosition;
+    
+    document.addEventListener('scroll', function () {
+        var currentPosition = [window.scrollX, window.scrollY];
+        var distance = getDistance(lastScrollPosition, currentPosition);
+        lastScrollPosition = currentPosition;
+        distance && addAction({
+            type: 'scroll',
+            distance: distance,
+            score: distance / 20 // 100 pixels → 5 points
+        });
     });
 })();
