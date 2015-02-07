@@ -1,7 +1,12 @@
+/* eslint-env node */
+
 module.exports = {
-    entry: './scripts/google-calendar',
+    entry: {
+        'google-calendar': './scripts/google-calendar',
+        'ux-distance': './scripts/ux-distance.js'
+    },
     output: {
         path: 'scripts/dist',
-        filename: 'google-calendar.js'
+        filename: '[name].js'
     }
 };

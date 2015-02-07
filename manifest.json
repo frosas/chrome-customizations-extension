@@ -10,6 +10,9 @@
         }, {
             "matches": ["https://trello.com/*"],
             "css": ["styles/trello.css"]
+        }, {
+            "matches": ["<all_urls>"],
+            "js": ["scripts/dist/ux-distance.js"]
         }
     ],
     "web_accessible_resources": [
