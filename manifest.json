@@ -13,6 +13,9 @@
         }, {
             "matches": ["<all_urls>"],
             "js": ["scripts/dist/ux-distance.js"]
+        }, {
+            "matches": ["<all_urls>"],
+            "js": ["scripts/dist/autocomplete.js"]
         }
     ],
     "web_accessible_resources": [

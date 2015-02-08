@@ -21,3 +21,6 @@ $ node_modules/.bin/webpack [-w]
   - Score - Consider time between actions
   - Score - Consider changing between action types
   - Score - Make it logarithmic?
+- Autocomplete
+  - Consider contenteditable elements (element.value only works for inputs and textareas)
+    - https://web.whatsapp.com/
