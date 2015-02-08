@@ -24,7 +24,6 @@
     var addAction = function (action) {
         action.start = action.end = new Date;
         actions.push(action);
-        console.log(JSON.stringify(action, null, 4));
         render();
     };
     
