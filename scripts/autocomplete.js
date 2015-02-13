@@ -27,8 +27,6 @@ var getWordsInDocument = function () {
         value();
 };
 
-console.log('gwid', getWordsInDocument());
-
 var getCurrentWord = function(element) {
     element.value.substring(0, element.selectionStart).match(/(\w*)$/);
     return RegExp.$1;
