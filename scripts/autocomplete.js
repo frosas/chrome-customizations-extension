@@ -62,6 +62,7 @@ onKeystroke(function() {
     var word = getCurrentWord(element);
     var words = getWordsInDocument();
     var candidates = getCandidateWords(word, words);
+    console.log('Autocomplete available', words.join(', '));
     console.log('Autocomplete candidates', candidates);
     if (candidates.length) {
         var previousText = element.value.substring(0, element.selectionStart - word.length);
