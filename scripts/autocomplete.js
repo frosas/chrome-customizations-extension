@@ -35,7 +35,7 @@ var getWordsInDocument = function () {
     return _([]).
         concat(getStringsFromTextNodes()).
         concat(getStringsFromInputs()).
-        map(function(text) { return _.words(text); }).flatten().
+        map(function(text) { return text.split(/\W/); }).flatten().
         uniq().
         sort().
         value();
