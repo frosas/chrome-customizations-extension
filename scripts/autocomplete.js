@@ -8,20 +8,33 @@ var onKeystroke = function (callback) {
     });    
 };
 
-var getContentNodes = function () {
-    return [].slice.call(document.querySelectorAll('*:not(script):not(style)'));
+/**
+ * @returns {Array.<string>}
+ */
+var getStringsFromTextNodes = function () {
+    return _(document.querySelectorAll('*:not(script):not(style)')).
+        map(function(node) {
+            return _(node.childNodes).
+                filter(function (node) { return node.nodeType == Node.TEXT_NODE; }).
+                map(function(node) { return node.nodeValue; }).
+                join(' ');
+        }).
+        value();
 };
 
-var getNodeText = function (node) {
-    return [].slice.call(node.childNodes).
-        filter(function (node) { return node.nodeType == Node.TEXT_NODE; }).
-        map(function(node) { return node.nodeValue; }).
-        join(' ');
+/**
+ * @returns {Array.<string>}
+ */
+var getStringsFromInputs = function() {
+    return _(document.querySelectorAll('textarea,input')).
+        map(function(node) { return node.value; }).
+        value();
 };
 
 var getWordsInDocument = function () {
-    return _(getContentNodes()).
-        map(getNodeText).
+    return _([]).
+        concat(getStringsFromTextNodes()).
+        concat(getStringsFromInputs()).
         map(function(text) { return _.words(text); }).flatten().
         uniq().
         value();
