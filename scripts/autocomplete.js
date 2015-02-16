@@ -37,6 +37,7 @@ var getWordsInDocument = function () {
         concat(getStringsFromInputs()).
         map(function(text) { return _.words(text); }).flatten().
         uniq().
+        sort().
         value();
 };
 
