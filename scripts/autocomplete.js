@@ -1,5 +1,3 @@
-/* eslint-env browser, node */
-
 var _ = require('lodash');
 
 var onKeystroke = function (callback) {

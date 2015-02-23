@@ -1,5 +1,3 @@
-/* eslint-env browser */
-
 (function () {
     var scoreElement = document.createElement('div');
     scoreElement.style.fontSize = '3em';
