@@ -16,6 +16,9 @@
         }, {
             "matches": ["<all_urls>"],
             "js": ["scripts/dist/autocomplete.js"]
+        }, {
+            "matches": ["https://*.hipchat.com/chat"],
+            "js": ["scripts/hipchat.js"]
         }
     ],
     "web_accessible_resources": [
