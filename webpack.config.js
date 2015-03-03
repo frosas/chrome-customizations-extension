@@ -3,7 +3,6 @@
 module.exports = {
     entry: {
         'google-calendar': './scripts/google-calendar',
-        'ux-distance': './scripts/ux-distance.js',
         autocomplete: './scripts/autocomplete.js'
     },
     output: {

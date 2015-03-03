@@ -12,9 +12,6 @@
             "css": ["styles/trello.css"]
         }, {
             "matches": ["<all_urls>"],
-            "js": ["scripts/dist/ux-distance.js"]
-        }, {
-            "matches": ["<all_urls>"],
             "js": ["scripts/dist/autocomplete.js"]
         }, {
             "matches": ["https://*.hipchat.com/chat"],
