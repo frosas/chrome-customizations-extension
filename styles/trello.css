@@ -1,3 +1,7 @@
+body {
+    background-image: url(https://images.unsplash.com/photo-1433785124354-92116416b870) !important;
+}
+
 .card-detail-edit textarea {
     font-family: monospace;
     font-size: 13px;
