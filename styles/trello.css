@@ -2,7 +2,7 @@ body { background-image: url(https://images.unsplash.com/photo-1433785124354-921
 
 .card-detail-edit textarea {
     font-family: Hack, monospace;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .card-detail-item { opacity: 0.3 } /* Un-highlight items (due date, ...) */
