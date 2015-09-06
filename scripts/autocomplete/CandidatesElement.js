@@ -17,7 +17,7 @@ module.exports = class CandidatesElement {
             this._tooltip.innerText = candidates.join('\n');
             this._show();
             clearTimeout(this._timeoutId);
-            this._timeoutId = setTimeout(() => this._hide(), 1500);
+            this._timeoutId = setTimeout(() => this._hide(), 1000);
         } else {
             this._hide();
         }
