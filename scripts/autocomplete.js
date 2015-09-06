@@ -2,7 +2,7 @@ var ActiveElement = require('./autocomplete/ActiveElement');
 var Document = require('./autocomplete/Document');
 
 var onKeystroke = function (callback) {
-    document.addEventListener('keypress', function (event) {
+    addEventListener('keypress', function (event) {
         if (event.ctrlKey && event.keyCode == 0 /* space */) callback();
     });
 };
