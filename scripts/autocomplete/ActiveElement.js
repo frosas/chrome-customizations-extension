@@ -28,13 +28,14 @@ module.exports = class ActiveElement {
 
     get _element() {
         return this._rangeNode instanceof Element ?
-            this._rangeNode.childNodes[this._range.startOffset] :
+            this._rangeNode.childNodes[this._range.startOffset] ||
+                this._rangeNode : // When it's empty
             this._rangeNode.parentNode;
     }
 
     set _caret(caret) {
         if (this._element.setSelectionRange) this._element.setSelectionRange(caret, caret);
-        else getSelection().collapse(this._element.childNodes[0], caret);
+        else getSelection().collapse(this._element.childNodes[0] || this._element, caret);
     }
 
     get _caret() {
