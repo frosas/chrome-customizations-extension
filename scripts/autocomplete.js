@@ -8,7 +8,7 @@ var onKeybindTriggered = function (callback) {
 };
 
 var startsWith = function(string, prefix) {
-    return string.substring(0, prefix.length) == prefix;
+    return string.toLowerCase().substring(0, prefix.length) == prefix.toLowerCase();
 };
 
 var getCandidateWords = function(string, words) {
