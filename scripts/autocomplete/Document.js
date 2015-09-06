@@ -5,7 +5,7 @@ module.exports = class Document {
         return _([]).
             concat(getStringsFromTextNodes()).
             concat(getStringsFromInputs()).
-            map(function(text) { return text.split(/\W/); }).flatten().
+            map((text) => text.split(/[^a-z\u00E0-\u00FC0-9]+/i)).flatten(). // From http://stackoverflow.com/a/11550799/337172
             uniq().
             sort().
             value();
