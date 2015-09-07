@@ -4,7 +4,10 @@ var CandidatesElement = require('./autocomplete/CandidatesElement');
 
 var onKeybindTriggered = function (callback) {
     addEventListener('keypress', function (event) {
-        if (event.ctrlKey && event.keyCode == 0 /* space */) callback();
+        if (event.ctrlKey && event.keyCode == 0 /* space */) {
+            event.preventDefault();
+            callback();
+        }
     });
 };
 
