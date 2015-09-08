@@ -10,6 +10,10 @@ module.exports = class ActiveElement {
         this._caret = (previousText + newWord).length;
     }
 
+    get isEditable() {
+        return 'value' in this._element || 'contenteditable' in this._element;
+    }
+
     set _text(text) {
         this._element[this._textAttribute] = text;
     }

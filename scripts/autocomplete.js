@@ -30,7 +30,9 @@ onKeybindTriggered(function() {
     if (candidates.length) element.replaceCurrentWord(candidates[0]);
 });
 
-addEventListener('keyup', () => {
+addEventListener('keyup', event => {
+    if (!element.isEditable) return;
+
     words = new Document().words;
     console.log('[Autocomplete] Available words', words.join(', '));
 

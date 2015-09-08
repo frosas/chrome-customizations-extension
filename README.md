@@ -32,5 +32,4 @@
 - Don't autocomplete elements not "contenteditable"
 - Throttle update of words in the page
 - Don't show candidates if a not printable keystroke is hit
-- Don't show candidates if not in an "inputable" element
 - Autocomplete up to the common text among candidates
