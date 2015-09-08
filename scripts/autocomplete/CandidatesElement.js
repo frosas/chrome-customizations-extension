@@ -14,6 +14,7 @@ module.exports = class CandidatesElement {
 
     set candidates(candidates) {
         if (candidates.length) {
+            if (candidates.length > 10) candidates = candidates.slice(0, 10).concat('…');
             this._tooltip.innerText = candidates.join('\n');
             this._show();
             clearTimeout(this._timeoutId);

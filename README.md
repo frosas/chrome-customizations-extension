@@ -28,7 +28,6 @@
 **Autocomplete**
 
 - Position candidates close to the caret
-- Limit candidates length
 - Don't autocomplete elements not "contenteditable"
 - Throttle update of words in the page
 - Don't show candidates if a not printable keystroke is hit
