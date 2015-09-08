@@ -31,4 +31,4 @@
 - Don't autocomplete elements not "contenteditable"
 - Throttle update of words in the page
 - Don't show candidates if a not printable keystroke is hit
-- Autocomplete up to the common text among candidates
+- Insert suggested text automatically (selected)

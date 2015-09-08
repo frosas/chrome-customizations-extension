@@ -21,13 +21,25 @@ var getCandidateWords = function(string, words) {
         .filter(function(word) { return word != string; });
 };
 
+var getCommonPrefix = strings => {
+    var prefix = '';
+    for (var i = 0; i < (strings[0] || '').length; i++) {
+        var char = strings[0][i];
+        for (var j = 0; j < strings.length; j++) {
+            if (strings[j][i] != char) return prefix;
+        }
+        prefix += char;
+    }
+    return prefix;
+};
+
 let candidates = [];
 let words = [];
 let element = new ActiveElement;
 let candidatesElement = new CandidatesElement;
 
 onKeybindTriggered(function() {
-    if (candidates.length) element.replaceCurrentWord(candidates[0]);
+    if (candidates.length) element.replaceCurrentWord(getCommonPrefix(candidates));
 });
 
 addEventListener('keyup', event => {
