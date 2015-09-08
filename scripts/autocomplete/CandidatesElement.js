@@ -12,8 +12,9 @@ module.exports = class CandidatesElement {
         document.body.appendChild(this._tooltip);
     }
 
-    set candidates(candidates) {
+    render({candidates, suggestedWord}) {
         if (candidates.length) {
+            candidates = candidates.map(candidate => suggestedWord + '✒︎' + candidate.slice(suggestedWord.length));
             if (candidates.length > 10) candidates = candidates.slice(0, 10).concat('…');
             this._tooltip.innerText = candidates.join('\n');
             this._show();

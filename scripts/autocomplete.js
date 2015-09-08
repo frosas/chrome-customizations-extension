@@ -37,9 +37,10 @@ let candidates = [];
 let words = [];
 let element = new ActiveElement;
 let candidatesElement = new CandidatesElement;
+let suggestedWord;
 
 onKeybindTriggered(function() {
-    if (candidates.length) element.replaceCurrentWord(getCommonPrefix(candidates));
+    if (candidates.length) element.replaceCurrentWord(suggestedWord);
 });
 
 addEventListener('keyup', event => {
@@ -50,8 +51,9 @@ addEventListener('keyup', event => {
 
     try {
         candidates = getCandidateWords(element.currentWord, words);
+        suggestedWord = getCommonPrefix(candidates);
         console.log('[Autocomplete] Candidate words', candidates);
-        candidatesElement.candidates = candidates;
+        candidatesElement.render({candidates, suggestedWord});
     } catch(error) {
         setTimeout(() => { throw error; }); // Probably nothing is selected
     }
