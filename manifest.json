@@ -3,11 +3,11 @@
     "name": "Personal customizations",
     "version": "0.1",
     "content_scripts": [
-        /*{
-            "matches": ["https://www.google.com/calendar/render*"],
+        {
+            "matches": ["https://calendar.google.com/calendar/render*"],
             "js": ["scripts/dist/google-calendar.js"],
             "css": ["styles/google-calendar.css"]
-        }, */
+        }   ,
         {
             "matches": ["https://trello.com/*"],
             "css": ["styles/trello.css"]
