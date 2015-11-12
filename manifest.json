@@ -7,13 +7,15 @@
             "matches": ["https://calendar.google.com/calendar/render*"],
             "js": ["scripts/dist/google-calendar.js"],
             "css": ["styles/google-calendar.css"]
-        }   ,
-        {
+        }, {
             "matches": ["https://trello.com/*"],
             "css": ["styles/trello.css"]
         }, {
             "matches": ["https://*.hipchat.com/chat"],
             "js": ["scripts/hipchat.js"]
+        }, {
+            "matches": ["https://bank.barclays.co.uk/*"],
+            "css": ["styles/barclays.css"]
         }
     ],
     "web_accessible_resources": [

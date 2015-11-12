@@ -1,0 +1,4 @@
+body {
+    user-select: inherit !important;
+    -webkit-user-select: inherit !important;
+}
