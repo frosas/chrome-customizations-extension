@@ -1,23 +1,4 @@
-body { background-image: url(https://images.unsplash.com/photo-1433785124354-92116416b870) !important }
-
 .card-detail-edit textarea {
     font-family: Hack, monospace;
     font-size: 12px;
 }
-
-.card-detail-item { opacity: 0.3 } /* Un-highlight items (due date, ...) */
-.card-detail-item-block { opacity: 1 } /* But not the description */
-
-/* Remove "Description" and "Edit" */
-.card-detail-item-block > h3,
-.card-detail-item-block > a {
-    display: none;
-}
-
-.window-main-col .window-module { opacity: 0.3 } /* Un-highlight activity */
-.window-main-col .checklist-list { opacity: 1 } /* But not the check lists */
-
-/* TODO Comments */
-
-.window { width: 830px !important }
-.window-main-col { width: 646px !important }
