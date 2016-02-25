@@ -16,6 +16,9 @@
         }, {
             "matches": ["https://bank.barclays.co.uk/*"],
             "css": ["styles/barclays.css"]
+        }, {
+            "matches": ["https://news.ycombinator.com/*"],
+            "css": ["styles/hacker-news.css"]
         }
     ],
     "web_accessible_resources": [

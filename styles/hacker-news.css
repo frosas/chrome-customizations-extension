@@ -1,0 +1,11 @@
+* {
+    font-family: Hack;
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+#hnmain {
+    width: 100%;
+    max-width: 60em;
+    margin: 0 auto;
+}
