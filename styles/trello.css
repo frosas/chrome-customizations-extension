@@ -2,3 +2,8 @@
     font-family: Hack, monospace;
     font-size: 12px;
 }
+
+.list-header-name {
+    font-weight: normal; /* Emojis aren't shown when bold */
+    font-size: 19px !important;
+}
