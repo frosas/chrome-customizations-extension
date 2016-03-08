@@ -3,6 +3,19 @@
     font-size: 12px;
 }
 
+.list {
+    background: rgba(255, 255, 255, 0.7) !important;
+    backdrop-filter: blur(5px);
+}
+
+.list-card {
+    background: rgba(255, 255, 255, 0.8) !important;
+}
+
+.list-card.active-card {
+    background: rgba(240, 240, 240, 1) !important;
+}
+
 .list-header-name {
     font-weight: normal; /* Emojis aren't shown when bold */
     font-size: 19px !important;
