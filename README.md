@@ -2,7 +2,7 @@
 
 1. &nbsp;
   ```
-  $ npm i
+  $ yarn
   $ node_modules/.bin/webpack [-w]
   ```
 2. Chrome → Extensions → Load unpacked extension (⌘R)
