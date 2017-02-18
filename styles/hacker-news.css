@@ -1,11 +1,11 @@
 * {
-    font-family: Hack;
-    font-size: 12px;
+    font-family: Inconsolata;
+    font-size: 14px;
     line-height: 1.4;
 }
 
 #hnmain {
     width: 100%;
-    max-width: 60em;
+    max-width: 50em;
     margin: 0 auto;
 }
