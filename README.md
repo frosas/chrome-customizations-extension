@@ -1,11 +1,11 @@
 ### Install
 
-1. &nbsp;
-  ```
-  $ yarn
-  $ node_modules/.bin/webpack [-w]
-  ```
-2. Chrome → Extensions → Load unpacked extension (⌘R)
+```bash
+$ yarn
+$ node_modules/.bin/webpack [-w]
+```
+
+Chrome → Extensions → Load unpacked extension (⌘R)
 
 ### TODO
 
