@@ -19,6 +19,9 @@
         }, {
             "matches": ["https://news.ycombinator.com/*"],
             "css": ["styles/hacker-news.css"]
+        }, {
+            "matches": ["https://www.buxfer.com/*"],
+            "css": ["styles/buxfer.css"]
         }
     ],
     "web_accessible_resources": [
