@@ -4,10 +4,6 @@
     "version": "0.1",
     "content_scripts": [
         {
-            "matches": ["https://calendar.google.com/calendar/render*"],
-            "js": ["scripts/dist/google-calendar.js"],
-            "css": ["styles/google-calendar.css"]
-        }, {
             "matches": ["https://trello.com/*"],
             "css": ["styles/trello.css"]
         }, {
@@ -23,8 +19,5 @@
             "matches": ["https://www.buxfer.com/*"],
             "css": ["styles/buxfer.css"]
         }
-    ],
-    "web_accessible_resources": [
-        "styles/google-calendar-bubble.css"
     ]
 }

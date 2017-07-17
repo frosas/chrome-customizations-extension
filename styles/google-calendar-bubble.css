@@ -1,9 +1,0 @@
-body {
-    overflow: auto !important;
-    width: 100%;
-}
-
-textarea.ec {
-    height: 200px;
-    font: 14px Ubuntu Mono, monospace;
-}

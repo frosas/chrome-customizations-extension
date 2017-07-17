@@ -9,15 +9,6 @@ Chrome → Extensions → Load unpacked extension (⌘R)
 
 ### TODO
 
-**Google Calendar**
-
-- Improve code structure
-- `TODO`s in the code
-- `Esc` to close the textarea when in edit mode
-- `Esc` to close the bubble when not in edit mode
-- `E` to edit
-- Overflow only the `<textarea>` + render section
-
 **UX distance**
 
 - Include scrolling
