@@ -1,7 +1,4 @@
 {
   "name": "chrome-customizations-extension",
-  "private": true,
-  "devDependencies": {
-    "lodash": "^3.1.0"
-  }
+  "private": true
 }
