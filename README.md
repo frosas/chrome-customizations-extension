@@ -1,7 +1,7 @@
 ### Install
 
 ```bash
-$ yarn
+$ npm i
 $ node_modules/.bin/webpack [-w]
 ```
 
