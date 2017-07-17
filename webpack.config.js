@@ -1,7 +1,6 @@
 module.exports = {
     entry: {
-        'google-calendar': './scripts/google-calendar',
-        autocomplete: './scripts/autocomplete.js'
+        'google-calendar': './scripts/google-calendar'
     },
     output: {path: 'scripts/dist', filename: '[name].js'},
     module: {loaders: [{
