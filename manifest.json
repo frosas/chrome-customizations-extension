@@ -7,9 +7,6 @@
             "matches": ["https://trello.com/*"],
             "css": ["styles/trello.css"]
         }, {
-            "matches": ["https://*.hipchat.com/chat"],
-            "js": ["scripts/hipchat.js"]
-        }, {
             "matches": ["https://bank.barclays.co.uk/*"],
             "css": ["styles/barclays.css"]
         }, {
