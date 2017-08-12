@@ -15,6 +15,9 @@
     }, {
       "matches": ["https://www.buxfer.com/*"],
       "css": ["styles/buxfer.css"]
+    }, {
+      "matches": ["https://github.com/*"],
+      "css": ["styles/github.css"]
     }
   ]
 }
