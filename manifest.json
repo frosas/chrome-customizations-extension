@@ -11,7 +11,8 @@
       "css": ["styles/barclays.css"]
     }, {
       "matches": ["https://news.ycombinator.com/*"],
-      "css": ["styles/hacker-news.css"]
+      "css": ["styles/hacker-news.css"],
+      "js": ["scripts/hacker-news.js"]
     }, {
       "matches": ["https://www.buxfer.com/*"],
       "css": ["styles/buxfer.css"]
