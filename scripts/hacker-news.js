@@ -32,7 +32,9 @@ class CommentTreeNode {
 const getCommentsTree = () => {
   const tree = new CommentTreeNode;
   let reference = tree;
-  document.querySelectorAll('.comtr').forEach(domNode => {
+  // Not sure why HN doesn't show some of the comments. E.g. 
+  // https://news.ycombinator.com/item?id=15630646
+  document.querySelectorAll('.comtr:not(.noshow)').forEach(domNode => {
     const node = new CommentTreeNode({ domNode });
     while (node.domNodeIndent <= reference.domNodeIndent) reference = reference.parent;
     reference.nest(node);
