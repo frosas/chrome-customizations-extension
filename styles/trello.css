@@ -31,3 +31,13 @@
     line-height: 9pt !important;
     min-width: 0 !important;
 }
+
+.window {
+    background: rgba(250, 250, 250, 1) !important;
+}
+
+.button-link,
+.card-detail-item-add-button,
+.known-service-link {
+    background: rgb(238, 238, 238) !important;
+}
