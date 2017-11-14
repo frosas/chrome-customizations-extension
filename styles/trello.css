@@ -20,3 +20,7 @@
     font-weight: normal; /* Emojis aren't shown when bold */
     font-size: 19px !important;
 }
+
+.list:not(:hover) .open-card-composer {
+    display: none !important;
+}
