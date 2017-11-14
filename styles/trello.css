@@ -24,3 +24,10 @@
 .list:not(:hover) .open-card-composer {
     display: none !important;
 }
+
+.card-label.mod-card-front {
+    padding: 2px 3px !important;
+    height: inherit !important;
+    line-height: 9pt !important;
+    min-width: 0 !important;
+}
