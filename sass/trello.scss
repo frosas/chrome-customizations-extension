@@ -7,15 +7,15 @@ $button-background-color: #eeeeee;
 .list {
   background: rgba(235, 235, 235, 0.9) !important;
   backdrop-filter: blur(5px);
-}
 
-.list-header-name {
-  font-weight: normal; /* Emojis aren't shown when bold */
-  font-size: 19px !important;
-}
+  .list-header-name {
+    font-weight: normal; /* Emojis aren't shown when bold */
+    font-size: 19px !important;
+  }
 
-.list:not(:hover) .open-card-composer {
-  display: none !important;
+  &:not(:hover) .open-card-composer {
+    display: none !important;
+  }
 }
 
 /********************************************************************************
@@ -24,53 +24,55 @@ $button-background-color: #eeeeee;
 
 .list-card {
   background: rgba(245, 245, 245, 0.8) !important;
-}
 
-.list-card.active-card {
-  background: rgba(250, 250, 250, 1) !important;
-}
+  &.active-card {
+    background: rgba(250, 250, 250, 1) !important;
+  }
 
-.list-card-details {
-  padding: 8px !important;
-  display: flex;
-  flex-flow: column;
-}
+  .list-card-details {
+    padding: 8px !important;
+    display: flex;
+    flex-flow: column;
 
-.list-card-title {
-  margin: 0 !important;
-  order: 1;
-  font-weight: 500 !important;
-}
+    .list-card-title {
+      margin: 0 !important;
+      order: 1;
+      font-weight: 500 !important;
+    }    
 
-.list-card-labels {
-  order: 2;
-}
+    .list-card-labels {
+      order: 2;
 
-.list-card-details .badges {
-  display: none;
-}
+      .card-label {
+        padding: 2px 3px !important;
+        height: inherit !important;
+        line-height: 9pt !important;
+        min-width: 0 !important;
+        margin: 3px 3px 0 0 !important;
+        font-size: 8pt !important;
+      }      
+    }    
 
-.card-label.mod-card-front {
-  padding: 2px 3px !important;
-  height: inherit !important;
-  line-height: 9pt !important;
-  min-width: 0 !important;
-  margin: 3px 3px 0 0 !important;
-  font-size: 8pt !important;
+    .badges {
+      display: none;
+    }    
+  }  
 }
 
 /********************************************************************************
  * Card detail
  ********************************************************************************/
 
-.card-detail-edit textarea {
-  font-family: Hack, monospace;
-  font-size: 12px;
-}
-
-.card-detail-window .button-link,
-.card-detail-item-add-button {
-  background: $button-background-color !important;
+.card-detail-window {
+  .card-detail-edit textarea {
+    font-family: Hack, monospace;
+    font-size: 12px;
+  }
+  
+  .button-link,
+  .card-detail-item-add-button {
+    background: $button-background-color !important;
+  }  
 }
 
 /********************************************************************************/
