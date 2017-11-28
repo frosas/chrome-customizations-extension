@@ -5,7 +5,9 @@
     "build": "npm run reset-dist && npm run build-static && npm run build-sass",
     "reset-dist": "rm -rf dist && mkdir dist",
     "build-static": "cp -a static/. dist",
-    "build-sass": "node-sass --recursive --output dist/styles sass"
+    "build-sass": "node-sass --recursive --output dist/styles sass",
+    "watch": "npm run reset-dist && npm run build-static && npm run watch-sass",
+    "watch-sass": "npm run build-sass -- --watch"
   },
   "devDependencies": {
     "node-sass": "^4.7.2"
