@@ -1,12 +1,26 @@
-.card-detail-edit textarea {
-    font-family: Hack, monospace;
-    font-size: 12px;
-}
+$button-background-color: #eeeeee;
+
+/********************************************************************************
+ * Lists
+ ********************************************************************************/
 
 .list {
     background: rgba(235, 235, 235, 0.9) !important;
     backdrop-filter: blur(5px);
 }
+
+.list-header-name {
+    font-weight: normal; /* Emojis aren't shown when bold */
+    font-size: 19px !important;
+}
+
+.list:not(:hover) .open-card-composer {
+    display: none !important;
+}
+
+/********************************************************************************
+ * List cards
+ ********************************************************************************/
 
 .list-card {
     background: rgba(245, 245, 245, 0.8) !important;
@@ -28,15 +42,6 @@
     margin: 0 !important;
 }
 
-.list-header-name {
-    font-weight: normal; /* Emojis aren't shown when bold */
-    font-size: 19px !important;
-}
-
-.list:not(:hover) .open-card-composer {
-    display: none !important;
-}
-
 .card-label.mod-card-front {
     padding: 2px 3px !important;
     height: inherit !important;
@@ -44,12 +49,26 @@
     min-width: 0 !important;
 }
 
+/********************************************************************************
+ * Card detail
+ ********************************************************************************/
+
+.card-detail-edit textarea {
+    font-family: Hack, monospace;
+    font-size: 12px;
+}
+
+.card-detail-window .button-link,
+.card-detail-item-add-button {
+    background: $button-background-color !important;
+}
+
+/********************************************************************************/
+
 .window {
     background: rgba(250, 250, 250, 1) !important;
 }
 
-.button-link,
-.card-detail-item-add-button,
 .known-service-link {
-    background: rgb(238, 238, 238) !important;
+    background: $button-background-color !important;
 }
