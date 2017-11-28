@@ -2,8 +2,12 @@
   "name": "chrome-customizations-extension",
   "private": true,
   "scripts": {
-    "build": "npm run reset-dist && npm run build-static",
+    "build": "npm run reset-dist && npm run build-static && npm run build-sass",
     "reset-dist": "rm -rf dist && mkdir dist",
-    "build-static": "cp -a static/. dist"
+    "build-static": "cp -a static/. dist",
+    "build-sass": "node-sass --recursive --output dist/styles sass"
+  },
+  "devDependencies": {
+    "node-sass": "^4.7.2"
   }
 }
