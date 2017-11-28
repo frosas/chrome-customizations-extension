@@ -1,4 +1,9 @@
 {
   "name": "chrome-customizations-extension",
-  "private": true
+  "private": true,
+  "scripts": {
+    "build": "npm run reset-dist && npm run build-static",
+    "reset-dist": "rm -rf dist && mkdir dist",
+    "build-static": "cp -a static/. dist"
+  }
 }
