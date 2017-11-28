@@ -32,14 +32,21 @@ $button-background-color: #eeeeee;
 
 .list-card-details {
   padding: 8px !important;
-}
-
-.list-card-details .badges {
-  display: none;
+  display: flex;
+  flex-flow: column;
 }
 
 .list-card-title {
   margin: 0 !important;
+  order: 1;
+}
+
+.list-card-labels {
+  order: 2;
+}
+
+.list-card-details .badges {
+  display: none;
 }
 
 .card-label.mod-card-front {
@@ -47,6 +54,7 @@ $button-background-color: #eeeeee;
   height: inherit !important;
   line-height: 9pt !important;
   min-width: 0 !important;
+  margin: 3px 3px 0 0 !important;
 }
 
 /********************************************************************************
