@@ -22,6 +22,9 @@
     }, {
       "matches": ["https://www.ticktick.com/*"],
       "css": ["styles/ticktick.css"]
+    }, {
+      "matches": ["https://www.youtube.com/*"],
+      "js": ["scripts/youtube.js"]
     }
   ]
 }
