@@ -2,14 +2,19 @@
   "name": "chrome-customizations-extension",
   "private": true,
   "scripts": {
-    "build": "npm run reset-dist && npm run build-static && npm run build-sass",
+    "build": "npm run reset-dist && concurrently -n static,sass,js \"npm run build-static\" \"npm run build-sass\" \"npm run build-js\"",
     "reset-dist": "rm -rf dist && mkdir dist",
     "build-static": "cp -a static/. dist",
     "build-sass": "node-sass --recursive --output dist/styles sass",
-    "watch": "npm run reset-dist && npm run build-static && npm run watch-sass",
-    "watch-sass": "npm run build-sass -- --watch"
+    "build-js": "webpack",
+    "watch": "npm run reset-dist && npm run build-static && concurrently -k -n sass,js \"npm run watch-sass\" \"npm run watch-js\"",
+    "watch-sass": "npm run build-sass -- --watch",
+    "watch-js": "webpack -w"
   },
-  "devDependencies": {
-    "node-sass": "^4.7.2"
+  "dependencies": {
+    "concurrently": "^3.5.1",
+    "glob": "^7.1.2",
+    "node-sass": "^4.7.2",
+    "webpack": "^3.10.0"
   }
 }
