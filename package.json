@@ -7,7 +7,8 @@
     "build-static": "cp -a static/. dist",
     "build-sass": "node-sass --recursive --output dist/styles sass",
     "build-js": "webpack",
-    "watch": "npm run reset-dist && npm run build-static && concurrently -k -n sass,js \"npm run watch-sass\" \"npm run watch-js\"",
+    "watch": "npm run reset-dist && concurrently -k -n static,sass,js \"npm run watch-static\" \"npm run watch-sass\" \"npm run watch-js\"",
+    "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
     "watch-sass": "npm run build-sass -- --watch",
     "watch-js": "webpack -w"
   },
@@ -15,6 +16,7 @@
     "concurrently": "^3.5.1",
     "glob": "^7.1.2",
     "node-sass": "^4.7.2",
+    "onchange": "^3.3.0",
     "webpack": "^3.10.0"
   }
 }
