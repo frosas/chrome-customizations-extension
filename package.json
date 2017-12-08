@@ -9,7 +9,7 @@
     "build-js": "webpack",
     "watch": "npm run reset-dist && concurrently -k -n static,sass,js \"npm run watch-static\" \"npm run watch-sass\" \"npm run watch-js\"",
     "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
-    "watch-sass": "npm run build-sass -- --watch",
+    "watch-sass": "concurrently -n sass,sass \"npm run build-sass\" \"npm run build-sass -- --watch\"",
     "watch-js": "webpack -w"
   },
   "dependencies": {
