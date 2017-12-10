@@ -5,10 +5,10 @@
 
 $right-view-width: 45%;
 
-#center-view {
+.g-center {
   right: $right-view-width;
 }
 
-#right-view {
+.g-right {
   width: $right-view-width;
 }
