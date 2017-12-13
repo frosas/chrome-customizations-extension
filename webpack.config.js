@@ -1,11 +1,11 @@
 const { promisify } = require("util");
 const glob = require("glob");
-const { basename } = require("path");
+const { basename, dirname } = require("path");
 
 module.exports = async () => ({
-  entry: (await promisify(glob)("./js/entries/*.js"))
-    .reduce((entries, file) => ({...entries, [basename(file, ".js")]: file}), {}),
-  output: {
-    filename: "dist/scripts/[name].js"
-  }
+  entry: (await promisify(glob)("./js/**/entry.js")).reduce((entries, file) => {
+    const name = basename(dirname(file)); // Use the parent dir name
+    return ({...entries, [name]: file});
+  }, {}),
+  output: { filename: "dist/scripts/[name].js" }
 });
