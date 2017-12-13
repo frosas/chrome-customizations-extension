@@ -10,11 +10,12 @@ export default class extends React.PureComponent {
   }
 
   render() {
-    return h("div", {},
-      h("p", {},
+    return [
+      h("p", { key: 1 },
         `Showing the ${this.state.max} most replied comments from ${this.props.total}.`
       ),
-      h("input", { 
+      h("input", {
+        key: 2,
         type: "range", 
         min: 0, 
         max: this.props.total,
@@ -25,6 +26,6 @@ export default class extends React.PureComponent {
           this.props.onChange(max)
         }
       })
-    );
+    ] ;
   }
 }
