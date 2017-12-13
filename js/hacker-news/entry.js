@@ -1,6 +1,9 @@
 // Shows only the most replied comments in https://news.ycombinator.com post and
 // comment pages.
 
+import React from 'react';
+import ReactDOM from 'react-dom';
+
 const INDENT_WIDTH = 12; // TODO Detect it automatically?
 
 class CommentTreeNode {
@@ -58,4 +61,48 @@ const showOnlyMostRepliedComments = ({ max }) => {
     });
 };
 
-showOnlyMostRepliedComments({ max: 5 });
+//
+
+const h = React.createElement;
+
+export default class extends React.PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { max: this.props.initialMax };
+    props.onChange(this.state.max);
+  }
+
+  render() {
+    return h("div", {},
+      h("p", {},
+        `Showing the ${this.state.max} most replied comments from ${this.props.total}.`
+      ),
+      h("input", { 
+        type: "range", 
+        min: 0, 
+        max: this.props.total,
+        value: this.state.max,
+        onChange: event => {
+          const max = event.target.value;
+          this.setState({ max })
+          this.props.onChange(max)
+        }
+      })
+    );
+  }
+}
+
+const el = document.createElement('div');
+el.className = 'chrome-customizations-extension-controls';
+document.body.appendChild(el);
+
+ReactDOM.render(
+  h("div", {},
+    h(MaxCommentsControl, {
+      initialMax: 5,
+      total: getComments().length,
+      onChange: max => showOnlyMostRepliedComments({ max })
+    })
+  ),
+  el
+);
