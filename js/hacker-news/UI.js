@@ -32,10 +32,6 @@ class MaxCommentsControl extends React.PureComponent {
 
 export default class UI {
   constructor({ maxComments, totalComments, onChangeMaxComments }) {
-  const el = document.createElement('div');
-    el.className = 'chrome-customizations-extension-controls';
-    document.body.appendChild(el);
-    
     ReactDOM.render(
       h("div", {},
         h(MaxCommentsControl, {
@@ -44,7 +40,14 @@ export default class UI {
           onChange: onChangeMaxComments
         })
       ),
-      el
+      this._createElement()
     );  
+  }
+
+  _createElement() {
+    const el = document.createElement('div');
+    el.className = 'chrome-customizations-extension-controls';
+    document.body.appendChild(el);
+    return el;
   }
 }
