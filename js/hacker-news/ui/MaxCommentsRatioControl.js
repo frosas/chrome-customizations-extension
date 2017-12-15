@@ -1,5 +1,5 @@
 import React from 'react';
-import { humanRatio, ratioToAbsolute } from "./comments";
+import { humanRatio, ratioToAbsolute } from "../comments";
 
 const h = React.createElement;
 

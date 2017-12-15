@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MaxCommentsRatioControl from "./MaxCommentsRatioControl";
+import MaxCommentsRatioControl from "./ui/MaxCommentsRatioControl";
 
 const h = React.createElement;
 
