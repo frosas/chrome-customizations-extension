@@ -56,3 +56,9 @@ export const showOnlyMostReplied = ({ maxRatio }) => {
       comment.domNode.querySelector('.comment').style.display = show ? 'block' : 'none';        
     });
 };
+
+/**
+ * @param {number} ratio Comments ratio (from 0 to 1).
+ * @returns {number} The human representation (a percentage) of the ratio.
+ */
+export const humanRatio = ratio => `${Math.ceil(ratio * 100)}%`;
