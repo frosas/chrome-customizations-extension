@@ -12,13 +12,15 @@ export default class extends React.PureComponent {
   render() {
     return [
       h("p", { key: 1 },
-        `Showing the ${this.state.max} most replied comments from ${this.props.total}.`
+        `Showing the ${(this.state.max * 100).toFixed(0)}% most replied comments 
+        (${Math.ceil(this.state.max * this.props.total)} of ${this.props.total}).`
       ),
       h("input", {
         key: 2,
         type: "range", 
         min: 0, 
-        max: this.props.total,
+        max: 1,
+        step: 0.05,
         value: this.state.max,
         onChange: event => {
           const max = event.target.value;

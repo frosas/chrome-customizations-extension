@@ -51,8 +51,10 @@ const getComments = () => {
   return comments;
 }
 
-const showOnlyMostRepliedComments = ({ max }) => {
-  getComments()
+const showOnlyMostRepliedComments = ({ maxRatio }) => {
+  const comments = getComments();
+  const max = Math.ceil(maxRatio * comments.length);
+  comments
     .sort((comment1, comment2) => comment2.children.length - comment1.children.length)
     .forEach((comment, i) => {
       const show = i <= max - 1;
@@ -61,7 +63,7 @@ const showOnlyMostRepliedComments = ({ max }) => {
 };
 
 new UI({
-  maxComments: 5,
+  maxCommentsRatio: 0.05,
   totalComments: getComments().length,
-  onChangeMaxComments: max => showOnlyMostRepliedComments({ max })
+  onChangeMaxComments: maxRatio => showOnlyMostRepliedComments({ maxRatio })
 });

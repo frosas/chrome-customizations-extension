@@ -1,15 +1,15 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import MaxCommentsControl from "./MaxCommentsControl";
+import MaxCommentsRatioControl from "./MaxCommentsRatioControl";
 
 const h = React.createElement;
 
 export default class UI {
-  constructor({ maxComments, totalComments, onChangeMaxComments }) {
+  constructor({ maxCommentsRatio, totalComments, onChangeMaxComments }) {
     ReactDOM.render(
       h("div", {},
-        h(MaxCommentsControl, {
-          initialMax: maxComments,
+        h(MaxCommentsRatioControl, {
+          initialMax: maxCommentsRatio,
           total: totalComments,
           onChange: onChangeMaxComments
         })
