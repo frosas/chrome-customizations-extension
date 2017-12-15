@@ -1,5 +1,5 @@
 import React from 'react';
-import { humanRatio } from "./comments";
+import { humanRatio, ratioToAbsolute } from "./comments";
 
 const h = React.createElement;
 
@@ -14,7 +14,7 @@ export default class extends React.PureComponent {
     return [
       h("p", { key: 1 },
         `Showing the ${humanRatio(this.state.max)} most replied comments 
-        (${Math.ceil(this.state.max * this.props.total)} of ${this.props.total}).`
+        (${ratioToAbsolute(this.state.max, this.props.total)} of ${this.props.total}).`
       ),
       h("input", {
         key: 2,
