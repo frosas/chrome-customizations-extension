@@ -20,8 +20,7 @@ export const getComments = () => {
   return comments;
 }
 
-export const showOnlyMostReplied = ({ maxRatio }) => {
-  const comments = getComments();
+export const showOnlyMostReplied = ({ comments, maxRatio }) => {
   const max = ratioToAbsolute(maxRatio, comments.length);
   comments
     .sort((comment1, comment2) => comment2.children.length - comment1.children.length)

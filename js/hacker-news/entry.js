@@ -4,8 +4,10 @@
 import UI from "./UI";
 import { showOnlyMostReplied, getComments } from "./comments";
 
+const comments = getComments();
+
 new UI({
   maxCommentsRatio: 0.05,
-  totalComments: getComments().length,
-  onChangeMaxComments: maxRatio => showOnlyMostReplied({ maxRatio })
+  totalComments: comments.length,
+  onChangeMaxComments: maxRatio => showOnlyMostReplied({ comments, maxRatio })
 });
