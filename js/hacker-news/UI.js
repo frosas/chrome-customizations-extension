@@ -6,6 +6,9 @@ const h = React.createElement;
 
 export default class UI {
   constructor({ maxCommentsRatio, totalComments, onChangeMaxComments }) {
+    // Don't show anything if there are no comments (e.g. in the homepage)
+    if (!totalComments) return;
+
     ReactDOM.render(
       h("div", {},
         h(MaxCommentsRatioControl, {
