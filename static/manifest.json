@@ -5,7 +5,8 @@
   "content_scripts": [
     {
       "matches": ["https://trello.com/*"],
-      "css": ["styles/trello.css"]
+      "css": ["styles/trello.css"],
+      "js": ["scripts/trello.js"]
     }, {
       "matches": ["https://bank.barclays.co.uk/*"],
       "css": ["styles/barclays.css"]
