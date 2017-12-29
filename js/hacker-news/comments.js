@@ -20,18 +20,18 @@ export const getComments = () => {
   return comments;
 }
 
-export const getMaxCommentsToShow = ({ comments, min, maxRatio }) => {
-  return Math.max(min, ratioToAbsolute(maxRatio, comments.length));
-};
-
 export const showOnlyMostReplied = ({ comments, min, maxRatio }) => {
-  const max = getMaxCommentsToShow({ comments, min, maxRatio });
+  const shown = Math.min(
+    comments.length, 
+    Math.max(min, ratioToAbsolute(maxRatio, comments.length))
+  );
   comments
     .sort((comment1, comment2) => comment2.children.length - comment1.children.length)
     .forEach((comment, i) => {
-      const show = i <= max - 1;
+      const show = i <= shown - 1;
       comment.domNode.querySelector('.comment').style.display = show ? 'block' : 'none';        
     });
+  return shown;
 };
 
 /**
