@@ -1,12 +1,10 @@
 // Shows only the most replied comments in https://news.ycombinator.com post and
 // comment pages.
 
-import React from "react";
+import { createElement as h } from "react";
 import ReactDOM from "react-dom";
 import { getComments } from "./comments";
 import MainComponent from "./ui/MainComponent";
-
-const h = React.createElement;
 
 const comments = getComments();
 
