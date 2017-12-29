@@ -12,13 +12,12 @@ export default class extends React.PureComponent {
 
   render() {
     return h("div", {}, [
-      h("p", { key: 1 },
+      h("p", {},
         `Showing the ${humanRatio(this.state.maxCommentsRatio)}, and at least 
         ${this.props.minComments}, of the most replied comments 
         (${this.state.shownComments} of ${this.props.comments.length}).`
       ),
       h("input", {
-        key: 2,
         type: "range",
         min: 0,
         max: 1,
