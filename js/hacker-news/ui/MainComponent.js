@@ -31,7 +31,7 @@ export default class extends PureComponent {
 
   _updateComments() {
     const amount = getCommentsAmountToShow({
-      comments: this.props.comments,
+      total: this.props.comments.length,
       min: this.props.minComments,
       maxRatio: this.state.maxCommentsRatio
     });

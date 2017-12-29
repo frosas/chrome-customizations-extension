@@ -20,10 +20,8 @@ export const getComments = () => {
   return comments;
 }
 
-export const getCommentsAmountToShow = ({ comments, min, maxRatio }) => {
-  return Math.min(comments.length, 
-    Math.max(min, ratioToAbsolute(maxRatio, comments.length))
-  );
+export const getCommentsAmountToShow = ({ total, min, maxRatio }) => {
+  return Math.min(total, Math.max(min, ratioToAbsolute(maxRatio, total)));
 };
 
 export const showOnlyMostReplied = ({ comments, amount }) => {
