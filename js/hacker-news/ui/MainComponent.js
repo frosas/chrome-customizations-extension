@@ -1,5 +1,5 @@
 import React from 'react';
-import { humanRatio } from "../comments";
+import { humanRatio, showOnlyMostReplied, getMaxCommentsToShow } from "../comments";
 
 const h = React.createElement;
 
@@ -7,14 +7,14 @@ export default class extends React.PureComponent {
   constructor(props) {
     super(props);
     this.state = { maxCommentsRatio: this.props.initialMaxCommentsRatio };
-    props.onChangeMaxCommentsRatio(this.state.maxCommentsRatio);
+    this._updateComments();
   }
 
   render() {
     return h("div", {}, [
       h("p", { key: 1 },
         `Showing the ${humanRatio(this.state.maxCommentsRatio)} most replied comments 
-        (${this.props.shownComments} of ${this.props.totalComments}).`
+        (${this._shownComments} of ${this.props.comments.length}).`
       ),
       h("input", {
         key: 2,
@@ -24,11 +24,24 @@ export default class extends React.PureComponent {
         step: 0.05,
         value: this.state.maxCommentsRatio,
         onChange: event => {
-          const ratio = event.target.value;
-          this.setState({ maxCommentsRatio: ratio });
-          this.props.onChangeMaxCommentsRatio(ratio);
+          this.setState({ maxCommentsRatio: event.target.value });
+          this._updateComments();
         }
       })
     ]);
+  }
+
+  get _shownComments() {
+    return getMaxCommentsToShow({
+      comments: this.props.comments,
+      maxRatio: this.state.maxCommentsRatio
+    });
+  }
+
+  _updateComments() {
+    showOnlyMostReplied({
+      comments: this.props.comments,
+      maxRatio: this.state.maxCommentsRatio
+    });
   }
 }
