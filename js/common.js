@@ -1,4 +1,6 @@
-export const sleep = delay => new Promise(resolve => setTimeout(resolve, delay));
+export const sleep = delay => {
+  return new Promise(resolve => setTimeout(resolve, delay));
+};
 
 export const waitFor = async get => {
   const value = await get();

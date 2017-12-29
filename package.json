@@ -7,16 +7,21 @@
     "build-static": "cp -a static/. dist",
     "build-sass": "node-sass --recursive --output dist/styles sass",
     "build-js": "webpack",
-    "watch": "npm run reset-dist && concurrently -k -n static,sass,js \"npm run watch-static\" \"npm run watch-sass\" \"npm run watch-js\"",
+    "watch": "npm run reset-dist && concurrently -k -n static,sass,js,lint \"npm run watch-static\" \"npm run watch-sass\" \"npm run watch-js\" \"npm run watch-lint\"",
     "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
     "watch-sass": "concurrently -n sass,sass \"npm run build-sass\" \"npm run build-sass -- --watch\"",
-    "watch-js": "webpack -w"
+    "watch-js": "webpack -w",
+    "watch-lint": "onchange -i '**/{.,}*.js' -- eslint . --fix"
   },
   "dependencies": {
+    "@frosas/eslint-config": "^0.1.0",
     "concurrently": "^3.5.1",
+    "eslint": "^4.14.0",
+    "eslint-plugin-prettier": "^2.4.0",
     "glob": "^7.1.2",
     "node-sass": "^4.7.2",
     "onchange": "^3.3.0",
+    "prettier": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "webpack": "^3.10.0"

@@ -30,9 +30,9 @@ export default class extends Component {
   }
 
   _updateComments() {
-    showOnlyMostReplied({ 
-      comments: this.props.comments, 
-      amount: this._shownComments 
+    showOnlyMostReplied({
+      comments: this.props.comments,
+      amount: this._shownComments
     });
   }
 
