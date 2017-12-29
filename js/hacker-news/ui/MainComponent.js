@@ -1,5 +1,6 @@
-import React from 'react';
-import { humanRatio, showOnlyMostReplied, getCommentsAmountToShow } from "../comments";
+import React from "react";
+import { showOnlyMostReplied, getCommentsAmountToShow } from "../comments";
+import LegendComponent from "./LegendComponent";
 
 const h = React.createElement;
 
@@ -12,11 +13,12 @@ export default class extends React.PureComponent {
 
   render() {
     return h("div", {}, [
-      h("p", {},
-        `Showing the ${humanRatio(this.state.maxCommentsRatio)}, and at least 
-        ${this.props.minComments}, of the most replied comments 
-        (${this.state.shownComments} of ${this.props.comments.length}).`
-      ),
+      h(LegendComponent, {
+        minComments: this.props.minComments,
+        maxCommentsRatio: this.state.maxCommentsRatio,
+        totalComments: this.props.comments.length,
+        shownComments: this.state.shownComments
+      }),
       h("input", {
         type: "range",
         min: 0,
