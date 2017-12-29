@@ -15,5 +15,12 @@ if (comments.length) {
   const el = document.createElement('div');
   el.className = 'chrome-customizations-extension-controls';
   document.body.appendChild(el);
-  ReactDOM.render(h(MainComponent, { comments, initialMaxCommentsRatio: 0.05 }), el);  
+  ReactDOM.render(
+    h(MainComponent, {
+      comments,
+      minComments: 5,
+      initialMaxCommentsRatio: 0.05
+    }),
+    el
+  );
 }

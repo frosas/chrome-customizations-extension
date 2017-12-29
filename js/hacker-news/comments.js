@@ -20,12 +20,12 @@ export const getComments = () => {
   return comments;
 }
 
-export const getMaxCommentsToShow = ({ comments, maxRatio }) => {
-  return ratioToAbsolute(maxRatio, comments.length);
+export const getMaxCommentsToShow = ({ comments, min, maxRatio }) => {
+  return Math.max(min, ratioToAbsolute(maxRatio, comments.length));
 };
 
-export const showOnlyMostReplied = ({ comments, maxRatio }) => {
-  const max = getMaxCommentsToShow({ comments, maxRatio });
+export const showOnlyMostReplied = ({ comments, min, maxRatio }) => {
+  const max = getMaxCommentsToShow({ comments, min, maxRatio });
   comments
     .sort((comment1, comment2) => comment2.children.length - comment1.children.length)
     .forEach((comment, i) => {
