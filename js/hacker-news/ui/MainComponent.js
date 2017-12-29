@@ -11,7 +11,7 @@ export default class extends React.PureComponent {
   }
 
   render() {
-    return [
+    return h("div", {}, [
       h("p", { key: 1 },
         `Showing the ${humanRatio(this.state.maxCommentsRatio)} most replied comments 
         (${this.props.shownComments} of ${this.props.totalComments}).`
@@ -29,6 +29,6 @@ export default class extends React.PureComponent {
           this.props.onChangeMaxCommentsRatio(ratio);
         }
       })
-    ] ;
+    ]);
   }
 }

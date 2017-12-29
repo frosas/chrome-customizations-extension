@@ -22,24 +22,22 @@ export default class UI {
 
   _render() {
     ReactDOM.render(
-      h("div", {},
-        h(MainComponent, {
-          initialMaxCommentsRatio: this._maxCommentsRatio,
-          totalComments: this._comments.length,
-          shownComments: getMaxCommentsToShow({
+      h(MainComponent, {
+        initialMaxCommentsRatio: this._maxCommentsRatio,
+        totalComments: this._comments.length,
+        shownComments: getMaxCommentsToShow({
+          comments: this._comments,
+          maxRatio: this._maxCommentsRatio
+        }),
+        onChangeMaxCommentsRatio: ratio => {
+          this._maxCommentsRatio = ratio;
+          showOnlyMostReplied({
             comments: this._comments,
             maxRatio: this._maxCommentsRatio
-          }),
-          onChangeMaxCommentsRatio: ratio => {
-            this._maxCommentsRatio = ratio;
-            showOnlyMostReplied({
-              comments: this._comments,
-              maxRatio: this._maxCommentsRatio
-            });
-            this._render();
-          }
-        })
-      ),
+          });
+          this._render();
+        }
+      }),
       this._element
     );  
   }
