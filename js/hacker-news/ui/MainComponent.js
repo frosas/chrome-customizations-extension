@@ -1,9 +1,9 @@
-import { createElement as h, PureComponent } from "react";
+import { createElement as h, Component } from "react";
 import { showOnlyMostReplied, getCommentsAmountToShow } from "../comments";
 import LegendComponent from "./LegendComponent";
 import MaxCommentsRatioControl from "./MaxCommentsRatioControl";
 
-export default class extends PureComponent {
+export default class extends Component {
   constructor(props) {
     super(props);
     this.state = { maxCommentsRatio: this.props.initialMaxCommentsRatio };
@@ -16,7 +16,7 @@ export default class extends PureComponent {
         minComments: this.props.minComments,
         maxCommentsRatio: this.state.maxCommentsRatio,
         totalComments: this.props.comments.length,
-        shownComments: this.state.shownComments
+        shownComments: this._shownComments
       }),
       h(MaxCommentsRatioControl, {
         ratio: this.state.maxCommentsRatio,
@@ -30,12 +30,17 @@ export default class extends PureComponent {
   }
 
   _updateComments() {
-    const amount = getCommentsAmountToShow({
+    showOnlyMostReplied({ 
+      comments: this.props.comments, 
+      amount: this._shownComments 
+    });
+  }
+
+  get _shownComments() {
+    return getCommentsAmountToShow({
       total: this.props.comments.length,
       min: this.props.minComments,
       maxRatio: this.state.maxCommentsRatio
     });
-    showOnlyMostReplied({ comments: this.props.comments, amount });
-    this.setState({ shownComments: amount });
   }
 }
