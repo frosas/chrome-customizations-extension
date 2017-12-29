@@ -1,17 +1,18 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MaxCommentsRatioControl from "./ui/MaxCommentsRatioControl";
+import { showOnlyMostReplied } from "./comments";
 
 const h = React.createElement;
 
 export default class UI {
-  constructor({ maxCommentsRatio, totalComments, onChangeMaxComments }) {
+  constructor({ comments, maxCommentsRatio }) {
     ReactDOM.render(
       h("div", {},
         h(MaxCommentsRatioControl, {
           initialMax: maxCommentsRatio,
-          total: totalComments,
-          onChange: onChangeMaxComments
+          total: comments.length,
+          onChange: maxRatio => showOnlyMostReplied({ comments, maxRatio })
         })
       ),
       this._createElement()
