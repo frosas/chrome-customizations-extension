@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import MainComponent from "./ui/MainComponent";
-import { showOnlyMostReplied } from "./comments";
+import { showOnlyMostReplied, getMaxCommentsToShow } from "./comments";
 
 const h = React.createElement;
 
@@ -26,8 +26,17 @@ export default class UI {
         h(MainComponent, {
           initialMaxCommentsRatio: this._maxCommentsRatio,
           totalComments: this._comments.length,
-          onChangeMaxCommentsRatio: maxRatio => {
-            showOnlyMostReplied({ comments: this._comments, maxRatio });
+          shownComments: getMaxCommentsToShow({
+            comments: this._comments,
+            maxRatio: this._maxCommentsRatio
+          }),
+          onChangeMaxCommentsRatio: ratio => {
+            this._maxCommentsRatio = ratio;
+            showOnlyMostReplied({
+              comments: this._comments,
+              maxRatio: this._maxCommentsRatio
+            });
+            this._render();
           }
         })
       ),

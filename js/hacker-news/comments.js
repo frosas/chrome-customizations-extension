@@ -20,8 +20,12 @@ export const getComments = () => {
   return comments;
 }
 
+export const getMaxCommentsToShow = ({ comments, maxRatio }) => {
+  return ratioToAbsolute(maxRatio, comments.length);
+};
+
 export const showOnlyMostReplied = ({ comments, maxRatio }) => {
-  const max = ratioToAbsolute(maxRatio, comments.length);
+  const max = getMaxCommentsToShow({ comments, maxRatio });
   comments
     .sort((comment1, comment2) => comment2.children.length - comment1.children.length)
     .forEach((comment, i) => {
@@ -41,4 +45,4 @@ export const humanRatio = ratio => `${Math.ceil(ratio * 100)}%`;
  * @param {number} total Total of comments.
  * @returns {number} The absolute number of comments represented in the ratio.
  */
-export const ratioToAbsolute = (ratio, total) => Math.ceil(ratio * total);
+const ratioToAbsolute = (ratio, total) => Math.ceil(ratio * total);
