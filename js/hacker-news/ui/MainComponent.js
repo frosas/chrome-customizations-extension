@@ -19,7 +19,7 @@ export default class extends PureComponent {
         shownComments: this.state.shownComments
       }),
       h(MaxCommentsRatioControl, {
-        maxCommentsRatio: this.state.maxCommentsRatio,
+        ratio: this.state.maxCommentsRatio,
         onChange: ratio => this.setState({ maxCommentsRatio: ratio })
       })
     ]);

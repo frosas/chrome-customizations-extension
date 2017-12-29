@@ -6,7 +6,7 @@ export default props => {
     min: 0,
     max: 1,
     step: 0.05,
-    value: props.maxCommentsRatio,
+    value: props.ratio,
     onChange: event => props.onChange(event.target.value)
   });
 };
