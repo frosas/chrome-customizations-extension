@@ -1,10 +1,9 @@
-import React from "react";
+import { createElement as h, PureComponent } from "react";
 import { showOnlyMostReplied, getCommentsAmountToShow } from "../comments";
 import LegendComponent from "./LegendComponent";
+import MaxCommentsRatioControl from "./MaxCommentsRatioControl";
 
-const h = React.createElement;
-
-export default class extends React.PureComponent {
+export default class extends PureComponent {
   constructor(props) {
     super(props);
     this.state = { maxCommentsRatio: this.props.initialMaxCommentsRatio };
@@ -19,13 +18,9 @@ export default class extends React.PureComponent {
         totalComments: this.props.comments.length,
         shownComments: this.state.shownComments
       }),
-      h("input", {
-        type: "range",
-        min: 0,
-        max: 1,
-        step: 0.05,
-        value: this.state.maxCommentsRatio,
-        onChange: event => this.setState({ maxCommentsRatio: event.target.value })
+      h(MaxCommentsRatioControl, {
+        maxCommentsRatio: this.state.maxCommentsRatio,
+        onChange: ratio => this.setState({ maxCommentsRatio: ratio })
       })
     ]);
   }
