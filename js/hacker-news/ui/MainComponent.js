@@ -23,12 +23,13 @@ export default class extends React.PureComponent {
         max: 1,
         step: 0.05,
         value: this.state.maxCommentsRatio,
-        onChange: event => {
-          this.setState({ maxCommentsRatio: event.target.value });
-          this._updateComments();
-        }
+        onChange: event => this.setState({ maxCommentsRatio: event.target.value })
       })
     ]);
+  }
+
+  componentDidUpdate() {
+    this._updateComments();
   }
 
   get _shownComments() {
