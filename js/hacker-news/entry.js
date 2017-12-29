@@ -2,12 +2,15 @@
 // comment pages.
 
 import UI from "./UI";
-import { showOnlyMostReplied, getComments } from "./comments";
+import { showOnlyMostReplied, getComments, getMaxCommentsToShow } from "./comments";
 
 const comments = getComments();
 
-new UI({
-  maxCommentsRatio: 0.05,
-  totalComments: comments.length,
-  onChangeMaxComments: maxRatio => showOnlyMostReplied({ comments, maxRatio })
-});
+// Don't show the UI if the page has no comments (e.g. the homepage)
+if (comments.length) {
+  new UI({
+    maxCommentsRatio: 0.05,
+    totalComments: comments.length,
+    onChangeMaxComments: maxRatio => showOnlyMostReplied({ comments, maxRatio })
+  });
+}
