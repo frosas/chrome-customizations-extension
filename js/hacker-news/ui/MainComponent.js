@@ -1,5 +1,5 @@
 import React from 'react';
-import { humanRatio, showOnlyMostReplied } from "../comments";
+import { humanRatio, showOnlyMostReplied, getCommentsAmountToShow } from "../comments";
 
 const h = React.createElement;
 
@@ -34,10 +34,12 @@ export default class extends React.PureComponent {
   }
 
   _updateComments() {
-    this.setState({ shownComments: showOnlyMostReplied({
+    const amount = getCommentsAmountToShow({
       comments: this.props.comments,
       min: this.props.minComments,
       maxRatio: this.state.maxCommentsRatio
-    }) });
+    });
+    showOnlyMostReplied({ comments: this.props.comments, amount });
+    this.setState({ shownComments: amount });
   }
 }
