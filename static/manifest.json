@@ -26,6 +26,9 @@
     }, {
       "matches": ["https://www.youtube.com/*"],
       "js": ["scripts/youtube.js"]
+    }, {
+      "matches": ["https://*.atlassian.net/*"],
+      "css": ["styles/jira.css"]
     }
   ]
 }
