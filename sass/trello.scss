@@ -75,6 +75,20 @@ $button-background-color: #eeeeee;
   }  
 }
 
+/********************************************************************************
+ * Date picker
+ ********************************************************************************/
+
+.pika-single .is-today .pika-button {
+  color: #000;
+  background: #fffd55;
+}
+
+.pika-single .is-selected .pika-button {
+  color: #fff;
+  background: #0079bf;
+}
+
 /********************************************************************************/
 
 .window {
