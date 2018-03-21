@@ -2,4 +2,9 @@
   .mod-header h2 {
     font-size: 20px;
   }
+
+  // Remove this: <div style="clear: both; height: 1365px;"></div>
+  #ghx-tab-com-atlassian-jira-plugins-jira-development-integration-plugin-greenhopper-devstatus-panel > :last-child {
+    display: none;
+  }
 }
