@@ -2,33 +2,31 @@
   "manifest_version": 2,
   "name": "Personal customizations",
   "version": "0.1",
-  "content_scripts": [
-    {
-      "matches": ["https://trello.com/*"],
-      "css": ["styles/trello.css"],
-      "js": ["scripts/trello.js"]
-    }, {
-      "matches": ["https://bank.barclays.co.uk/*"],
-      "css": ["styles/barclays.css"]
-    }, {
-      "matches": ["https://news.ycombinator.com/*"],
-      "css": ["styles/hacker-news.css"],
-      "js": ["scripts/hacker-news.js"]
-    }, {
-      "matches": ["https://www.buxfer.com/*"],
-      "css": ["styles/buxfer.css"]
-    }, {
-      "matches": ["https://github.com/*"],
-      "css": ["styles/github.css"]
-    }, {
-      "matches": ["https://www.ticktick.com/*"],
-      "css": ["styles/ticktick.css"]
-    }, {
-      "matches": ["https://www.youtube.com/*"],
-      "js": ["scripts/youtube.js"]
-    }, {
-      "matches": ["https://*.atlassian.net/*"],
-      "css": ["styles/jira.css", "styles/confluence.css"]
-    }
-  ]
+  "content_scripts": [{
+    "matches": ["https://trello.com/*"],
+    "css": ["styles/trello.css"],
+    "js": ["scripts/trello.js"]
+  }, {
+    "matches": ["https://bank.barclays.co.uk/*"],
+    "css": ["styles/barclays.css"]
+  }, {
+    "matches": ["https://news.ycombinator.com/*"],
+    "css": ["styles/hacker-news.css"],
+    "js": ["scripts/hacker-news.js"]
+  }, {
+    "matches": ["https://www.buxfer.com/*"],
+    "css": ["styles/buxfer.css"]
+  }, {
+    "matches": ["https://*.github.com/*"],
+    "css": ["styles/github.css"]
+  }, {
+    "matches": ["https://www.ticktick.com/*"],
+    "css": ["styles/ticktick.css"]
+  }, {
+    "matches": ["https://www.youtube.com/*"],
+    "js": ["scripts/youtube.js"]
+  }, {
+    "matches": ["https://*.atlassian.net/*"],
+    "css": ["styles/jira.css", "styles/confluence.css"]
+  }]
 }
