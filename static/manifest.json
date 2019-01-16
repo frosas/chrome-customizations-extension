@@ -21,7 +21,8 @@
     "css": ["styles/github.css"]
   }, {
     "matches": ["https://www.ticktick.com/*"],
-    "css": ["styles/ticktick.css"]
+    "css": ["styles/ticktick.css"],
+    "js": ["scripts/ticktick.js"]
   }, {
     "matches": ["https://www.youtube.com/*"],
     "js": ["scripts/youtube.js"]
