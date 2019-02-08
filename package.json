@@ -14,15 +14,15 @@
     "watch-lint": "onchange -i '**/{.,}*.js' -- eslint . --fix"
   },
   "dependencies": {
-    "concurrently": "^3.5.1",
+    "concurrently": "^4.1.0",
     "glob": "^7.1.2",
-    "onchange": "^3.3.0",
+    "onchange": "^5.2.0",
     "postcss-cli": "^6.0.0",
-    "postcss-nesting": "^6.0.0",
-    "precss": "^3.1.2",
+    "postcss-nesting": "^7.0.0",
+    "precss": "^4.0.0",
     "prettier": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.7.0",
-    "webpack": "^3.10.0"
+    "webpack": "^4.29.3"
   }
 }
