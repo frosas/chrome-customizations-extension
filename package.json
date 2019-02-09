@@ -6,23 +6,24 @@
     "reset-dist": "rm -rf dist && mkdir dist",
     "build-static": "cp -a static/. dist",
     "build-styles": "postcss styles/**/*.pcss --use precss --dir dist/styles --ext css --verbose",
-    "build-js": "webpack",
+    "build-js": "webpack --mode production",
     "watch": "npm run reset-dist && concurrently -k -n static,styles,js,lint \"npm run watch-static\" \"npm run watch-styles\" \"npm run watch-js\" \"npm run watch-lint\"",
     "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
     "watch-styles": "npm run build-styles -- --watch",
-    "watch-js": "webpack -w",
+    "watch-js": "webpack -w --mode development",
     "watch-lint": "onchange -i '**/{.,}*.js' -- eslint . --fix"
   },
   "dependencies": {
-    "concurrently": "^3.5.1",
+    "concurrently": "^4.1.0",
     "glob": "^7.1.2",
-    "onchange": "^3.3.0",
+    "onchange": "^5.2.0",
     "postcss-cli": "^6.0.0",
-    "postcss-nesting": "^6.0.0",
-    "precss": "^3.1.2",
+    "postcss-nesting": "^7.0.0",
+    "precss": "^4.0.0",
     "prettier": "^1.9.2",
     "react": "^16.2.0",
     "react-dom": "^16.7.0",
-    "webpack": "^3.10.0"
+    "webpack": "^4.29.3",
+    "webpack-cli": "^3.2.3"
   }
 }
