@@ -14,10 +14,7 @@
     "watch-lint": "onchange -i '**/{.,}*.js' -- eslint . --fix"
   },
   "dependencies": {
-    "@frosas/eslint-config": "^0.1.0",
     "concurrently": "^3.5.1",
-    "eslint": "^4.14.0",
-    "eslint-plugin-prettier": "^2.4.0",
     "glob": "^7.1.2",
     "onchange": "^3.3.0",
     "postcss-cli": "^6.0.0",
