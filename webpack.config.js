@@ -10,7 +10,7 @@ module.exports = async () => ({
     const name = basename(dirname(file)); // Use the parent dir name
     return { ...entries, [name]: file };
   }, {}),
-  output: { filename: "dist/scripts/[name].js" },
+  output: { filename: "scripts/[name].js" },
   plugins: [
     // For React
     new DefinePlugin({ "process.env.NODE_ENV": JSON.stringify("production") })
