@@ -1,5 +1,3 @@
-/* eslint-env node */
-
 const { promisify } = require("util");
 const glob = require("glob");
 const { basename, dirname } = require("path");
