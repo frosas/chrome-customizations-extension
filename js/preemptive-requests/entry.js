@@ -1,7 +1,7 @@
 // Inspired in https://instant.page/
 // https://w3c.github.io/resource-hints/ (API)
 
-const log = message => console.log(`[preemptive-prefetch] ${message}`);
+const log = message => console.log(`[preemptive-requests] ${message}`);
 
 const appendLinkEl = attributes =>
   document.head.appendChild(
