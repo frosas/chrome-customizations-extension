@@ -22,7 +22,7 @@ const getHttpOrigin = urlString => {
 };
 
 const origins = new Set(
-  [...document.querySelectorAll("[href]")]
+  [...document.querySelectorAll("a[href]")]
     .map(el => getHttpOrigin(el.href))
     .filter(origin => origin)
 );
