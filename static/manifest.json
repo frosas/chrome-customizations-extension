@@ -24,9 +24,6 @@
     "css": ["styles/ticktick.css"],
     "js": ["scripts/ticktick.js"]
   }, {
-    "matches": ["https://www.youtube.com/*"],
-    "js": ["scripts/youtube.js"]
-  }, {
     "matches": ["https://*.atlassian.net/*"],
     "css": ["styles/jira.css", "styles/confluence.css"]
   }, {
