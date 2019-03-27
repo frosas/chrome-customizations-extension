@@ -27,3 +27,26 @@ export const liveQuerySelectorAll = (baseElement, selector, callback) => {
     });
   }).observe(baseElement, { childList: true, subtree: true });
 };
+
+export const whenIdle = (() => {
+  let nextWhenIdleId = 1;
+
+  const log = message => console.info(`whenIdle 💤 – ${message}`);
+
+  return callback => {
+    const start = performance.now();
+    const whenIdleId = nextWhenIdleId++;
+    log(`Registering #${whenIdleId}`);
+    return new Promise((resolve, reject) => {
+      requestIdleCallback(() => {
+        try {
+          const lapse = (performance.now() - start).toFixed();
+          log(`Running #${whenIdleId} after ${lapse} ms`);
+          resolve(callback());
+        } catch (error) {
+          reject(error);
+        }
+      });
+    });
+  };
+})();

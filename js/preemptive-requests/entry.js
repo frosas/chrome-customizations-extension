@@ -1,10 +1,12 @@
 // Inspired in https://instant.page/
 // https://w3c.github.io/resource-hints/ (API)
 
-const log = message => console.log(`[preemptive-requests] ${message}`);
 // TODO Observe DOM mutations
-// TODO Use requestIdleCallback()
 // TODO Use Page Visibility API
+
+import { whenIdle } from "../common";
+
+const log = message => console.log(`preemptive-requests 🔮 – ${message}`);
 
 const appendLinkEl = attributes =>
   document.head.appendChild(
@@ -24,11 +26,15 @@ const getHttpOrigin = urlString => {
   if (url.protocol.match(/^https?:/)) return `${url.protocol}//${url.host}`;
 };
 
-const origins = new Set(
-  [...document.querySelectorAll("a[href]")]
-    .map(el => getHttpOrigin(el.href))
-    .filter(origin => origin)
-);
-// There's no point on trying to preconnect to the own origin
-origins.delete(location.origin);
-[...origins].forEach(preconnect);
+(async () => {
+  const origins = await whenIdle(
+    () =>
+      new Set(
+        [...document.querySelectorAll("a[href]")]
+          .map(el => getHttpOrigin(el.href))
+          .filter(origin => origin)
+      )
+  );
+  origins.delete(location.origin); // There's no point on trying to preconnect to the own origin
+  [...origins].forEach(origin => whenIdle(() => preconnect(origin)));
+})();
