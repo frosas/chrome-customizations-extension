@@ -2,6 +2,9 @@
 // https://w3c.github.io/resource-hints/ (API)
 
 const log = message => console.log(`[preemptive-requests] ${message}`);
+// TODO Observe DOM mutations
+// TODO Use requestIdleCallback()
+// TODO Use Page Visibility API
 
 const appendLinkEl = attributes =>
   document.head.appendChild(
