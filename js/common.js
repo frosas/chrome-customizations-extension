@@ -39,13 +39,11 @@ export const whenIdle = (() => {
     log(`Registering #${whenIdleId}`);
     return new Promise((resolve, reject) => {
       requestIdleCallback(() => {
-        try {
-          const lapse = (performance.now() - start).toFixed();
-          log(`Running #${whenIdleId} after ${lapse} ms`);
-          resolve(callback());
-        } catch (error) {
-          reject(error);
-        }
+        const lapse = (performance.now() - start).toFixed();
+        log(`Running #${whenIdleId} after ${lapse} ms`);
+        Promise.resolve()
+          .then(callback)
+          .then(resolve, reject);
       });
     });
   };
