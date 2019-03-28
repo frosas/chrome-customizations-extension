@@ -31,7 +31,7 @@ export const liveQuerySelectorAll = (baseElement, selector, callback) => {
 export const whenIdle = (() => {
   let nextWhenIdleId = 1;
 
-  const log = message => console.info(`whenIdle 💤 – ${message}`);
+  const log = message => console.debug(`whenIdle 💤 – ${message}`);
 
   return callback => {
     const start = performance.now();

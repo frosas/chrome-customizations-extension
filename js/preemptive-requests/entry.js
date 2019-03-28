@@ -6,7 +6,7 @@
 
 import { whenIdle } from "../common";
 
-const log = message => console.log(`preemptive-requests 🔮 – ${message}`);
+const log = message => console.debug(`preemptive-requests 🔮 – ${message}`);
 
 const appendLinkEl = attributes =>
   document.head.appendChild(
