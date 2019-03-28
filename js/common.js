@@ -29,18 +29,16 @@ export const liveQuerySelectorAll = (baseElement, selector, callback) => {
 };
 
 export const whenIdle = (() => {
-  let nextWhenIdleId = 1;
-
+  let nextId = 1;
   const log = message => console.debug(`whenIdle 💤 – ${message}`);
-
   return callback => {
     const start = performance.now();
-    const whenIdleId = nextWhenIdleId++;
-    log(`Registering #${whenIdleId}`);
+    const id = nextId++;
+    log(`Registering #${id}`);
     return new Promise((resolve, reject) => {
       requestIdleCallback(() => {
         const lapse = (performance.now() - start).toFixed();
-        log(`Running #${whenIdleId} after ${lapse} ms`);
+        log(`Running #${id} after ${lapse} ms`);
         Promise.resolve()
           .then(callback)
           .then(resolve, reject);
