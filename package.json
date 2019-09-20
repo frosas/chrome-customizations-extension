@@ -13,16 +13,16 @@
     "watch-js": "webpack -w --mode development"
   },
   "dependencies": {
-    "concurrently": "^4.1.0",
-    "glob": "^7.1.2",
+    "concurrently": "^4.1.2",
+    "glob": "^7.1.4",
     "onchange": "^5.2.0",
-    "postcss-cli": "^6.0.0",
-    "postcss-nesting": "^7.0.0",
+    "postcss-cli": "^6.1.3",
+    "postcss-nesting": "^7.0.1",
     "precss": "^4.0.0",
-    "prettier": "^1.9.2",
-    "react": "^16.2.0",
-    "react-dom": "^16.7.0",
-    "webpack": "^4.29.3",
-    "webpack-cli": "^3.2.3"
+    "prettier": "^1.18.2",
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9"
   }
 }
