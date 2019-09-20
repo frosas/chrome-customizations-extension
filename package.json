@@ -15,7 +15,7 @@
   "dependencies": {
     "concurrently": "^4.1.2",
     "glob": "^7.1.4",
-    "onchange": "^5.2.0",
+    "onchange": "^6.1.0",
     "postcss-cli": "^6.1.3",
     "postcss-nesting": "^7.0.1",
     "precss": "^4.0.0",
