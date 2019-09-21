@@ -20,10 +20,6 @@
     "matches": ["https://*.github.com/*"],
     "css": ["styles/github.css"]
   }, {
-    "matches": ["https://www.ticktick.com/*"],
-    "css": ["styles/ticktick.css"],
-    "js": ["scripts/ticktick.js"]
-  }, {
     "matches": ["https://*.atlassian.net/*"],
     "css": ["styles/jira.css", "styles/confluence.css"]
   }, {
