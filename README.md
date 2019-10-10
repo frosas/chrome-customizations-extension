@@ -1,6 +1,6 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/frosas/chrome-customizations-extension.svg)](https://greenkeeper.io/)
 
-### Installation
+## Installation
 
 ```bash
 $ npm i
@@ -16,3 +16,8 @@ Once installed, the extension can be reloaded by clicking *Update extensions now
 ```bash
 $ npm run watch
 ```
+
+## TODO
+
+- Setup ESLint
+- Find an up-to-date/secure CSS alternative
