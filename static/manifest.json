@@ -25,5 +25,8 @@
   }, {
     "matches": ["https://*.youtube.com/*"],
     "css": ["styles/youtube.css"]
+  }, {
+    "matches": ["https://*.wikipedia.org/wiki/*"],
+    "css": ["styles/wikipedia.css"]
   }]
 }
