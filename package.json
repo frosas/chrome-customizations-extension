@@ -2,15 +2,18 @@
   "name": "chrome-customizations-extension",
   "private": true,
   "scripts": {
+    "lint": "eslint .",
+    "test": "npm run lint",
     "build": "npm run reset-dist && concurrently -n static,styles,js \"npm run build-static\" \"npm run build-styles\" \"npm run build-js\"",
     "reset-dist": "rm -rf dist && mkdir dist",
     "build-static": "cp -a static/. dist",
     "build-styles": "postcss styles/**/*.pcss --use precss --dir dist/styles --ext css --verbose",
     "build-js": "webpack --mode production",
-    "watch": "npm run reset-dist && concurrently -k -n static,styles,js \"npm run watch-static\" \"npm run watch-styles\" \"npm run watch-js\"",
+    "watch": "npm run reset-dist && concurrently -k -n static,styles,js,lint \"npm run watch-static\" \"npm run watch-styles\" \"npm run watch-js\" \"npm run watch-lint\"",
     "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
     "watch-styles": "npm run build-styles -- --watch",
-    "watch-js": "webpack -w --mode development"
+    "watch-js": "webpack -w --mode development",
+    "watch-lint": "onchange -i '**/*.js' -- npm run lint -- --fix"
   },
   "dependencies": {
     "concurrently": "^4.1.2",
@@ -19,10 +22,16 @@
     "postcss-cli": "^6.1.3",
     "postcss-nesting": "^7.0.1",
     "precss": "^4.0.0",
-    "prettier": "^1.18.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "webpack": "^4.40.2",
     "webpack-cli": "^3.3.9"
+  },
+  "devDependencies": {
+    "@frosas/eslint-config": "^1.0.0",
+    "eslint": "^6.5.1",
+    "eslint-config-prettier": "^6.4.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "prettier": "^1.18.2"
   }
 }
