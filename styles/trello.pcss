@@ -53,9 +53,21 @@ $button-background-color: #eeeeee;
       }      
     }    
 
-    .badge[title="This card has a description."] {
-      display: none;
-    }    
+    .badge {
+      &[title="This card has a description."] {
+        display: none;
+      }    
+
+      &.is-due-soon {
+        background-color: unset;
+        border-radius: unset;
+        color: unset;
+
+        .badge-icon {
+          color: unset;
+        }
+      }
+    }
   }  
 }
 
