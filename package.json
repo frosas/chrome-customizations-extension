@@ -17,22 +17,22 @@
   },
   "dependencies": {
     "concurrently": "^5.0.0",
-    "glob": "^7.1.4",
+    "glob": "^7.1.6",
     "onchange": "^6.1.0",
     "postcss-cli": "^6.1.3",
     "postcss-nesting": "^7.0.1",
     "precss": "^4.0.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "webpack": "^4.40.2",
-    "webpack-cli": "^3.3.9"
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
     "@frosas/eslint-config": "^1.0.0",
-    "eslint": "^6.5.1",
-    "eslint-config-prettier": "^6.4.0",
+    "eslint": "^6.6.0",
+    "eslint-config-prettier": "^6.5.0",
     "eslint-plugin-prettier": "^3.1.1",
-    "husky": "^3.0.8",
-    "prettier": "^1.18.2"
+    "husky": "^3.0.9",
+    "prettier": "^1.19.1"
   }
 }
