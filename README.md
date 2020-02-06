@@ -1,5 +1,3 @@
-[![Greenkeeper badge](https://badges.greenkeeper.io/frosas/chrome-customizations-extension.svg)](https://greenkeeper.io/)
-
 ## Installation
 
 ```bash
