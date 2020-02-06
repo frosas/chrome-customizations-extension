@@ -19,7 +19,7 @@
     "concurrently": "^5.1.0",
     "glob": "^7.1.6",
     "onchange": "^6.1.0",
-    "postcss-cli": "^6.1.3",
+    "postcss-cli": "^7.1.0",
     "postcss-nesting": "^7.0.1",
     "precss": "^4.0.0",
     "react": "^16.12.0",
