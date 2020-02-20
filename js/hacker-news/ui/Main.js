@@ -1,6 +1,6 @@
 import { createElement as h, Component } from "react";
 import { showOnlyMostReplied, getCommentsAmountToShow } from "../comments";
-import LegendComponent from "./LegendComponent";
+import Legend from "./Legend";
 import MaxCommentsRatioControl from "./MaxCommentsRatioControl";
 
 export default class extends Component {
@@ -12,7 +12,7 @@ export default class extends Component {
 
   render() {
     return h("div", {}, [
-      h(LegendComponent, {
+      h(Legend, {
         minComments: this.props.minComments,
         maxCommentsRatio: this.state.maxCommentsRatio,
         totalComments: this.props.comments.length,

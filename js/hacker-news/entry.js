@@ -4,7 +4,7 @@
 import { createElement as h } from "react";
 import ReactDOM from "react-dom";
 import { getComments } from "./comments";
-import MainComponent from "./ui/MainComponent";
+import Main from "./ui/Main";
 
 const comments = getComments();
 
@@ -14,7 +14,7 @@ if (comments.length) {
   el.className = "chrome-customizations-extension-controls";
   document.body.appendChild(el);
   ReactDOM.render(
-    h(MainComponent, {
+    h(Main, {
       comments,
       minComments: 5,
       initialMaxCommentsRatio: 0.25
