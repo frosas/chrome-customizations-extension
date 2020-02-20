@@ -17,7 +17,7 @@ if (comments.length) {
     h(MainComponent, {
       comments,
       minComments: 5,
-      initialMaxCommentsRatio: 0.05
+      initialMaxCommentsRatio: 0.25
     }),
     el
   );
