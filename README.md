@@ -5,14 +5,14 @@ $ npm i
 $ npm run build
 ```
 
-*Chrome* → *Extensions* → Check *Developer mode* → *Load unpacked extension* → Select the `dist` directory.
+_Chrome_ → _Extensions_ → Check _Developer mode_ → _Load unpacked extension_ → Select the `dist` directory.
 
-Once installed, the extension can be reloaded by clicking *Update extensions now* (⌘R).
+Once installed, the extension can be reloaded by clicking _Update extensions now_ (⌘R).
 
 ### Development
 
 ```bash
-$ npm run watch
+$ npm run dev
 ```
 
 ## TODO

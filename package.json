@@ -9,7 +9,7 @@
     "build-static": "cp -a static/. dist",
     "build-styles": "postcss styles/**/*.pcss --use precss --dir dist/styles --ext css --verbose",
     "build-js": "webpack --mode production",
-    "watch": "npm run reset-dist && concurrently -k -n static,styles,js,lint \"npm run watch-static\" \"npm run watch-styles\" \"npm run watch-js\" \"npm run watch-lint\"",
+    "dev": "npm run reset-dist && concurrently -k -n static,styles,js,lint \"npm run watch-static\" \"npm run watch-styles\" \"npm run watch-js\" \"npm run watch-lint\"",
     "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
     "watch-styles": "npm run build-styles -- --watch",
     "watch-js": "webpack -w --mode development",
