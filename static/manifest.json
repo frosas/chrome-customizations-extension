@@ -4,6 +4,10 @@
   "version": "0.1",
   "content_scripts": [
     {
+      "matches": ["https://mail.google.com/*"],
+      "css": ["styles/gmail.css"]
+    },
+    {
       "matches": ["https://trello.com/*"],
       "css": ["styles/trello.css"],
       "js": ["scripts/trello.js"]
