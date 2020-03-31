@@ -1,14 +1,23 @@
-/* Make result titles bold */
-:root #links .result__title,
-:root #links .result__title b {
-  font-weight: bold !important;
-}
+/* Add to the specificity as just !important is not enough */
+:root #links {
+  /* Make result titles bold */
+  .result__title {
+    &,
+    b {
+      font-weight: bold !important;
+    }
+  }
 
-/* Highlight matched text */
-.result__body b,
-.result__body .result__snippet b {
-  font-weight: 900;
-  color: black !important;
-  background-color: #fff4b8 !important;
-  padding: 0 2px;
+  /* Highlight matched text */
+  .result__body {
+    &,
+    .result__snippet {
+      b {
+        font-weight: 900;
+        color: black !important;
+        background-color: #fff4b8 !important;
+        padding: 0 2px;
+      }
+    }
+  }
 }
