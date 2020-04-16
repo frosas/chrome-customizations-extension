@@ -17,5 +17,5 @@ $ npm run dev
 
 ## TODO
 
-- Setup ESLint
-- Find an up-to-date/secure CSS alternative
+- HN - Make all comments to have the same width (nested comments narrow)
+- HN - Fix collapsing thread not hiding the root comment
