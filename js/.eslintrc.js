@@ -2,10 +2,10 @@
 
 module.exports = {
   parserOptions: {
-    sourceType: "module"
+    sourceType: "module",
   },
   env: {
     node: false,
-    browser: true
-  }
+    browser: true,
+  },
 };

@@ -1,12 +1,12 @@
 import { createElement as h } from "react";
 
-export default props => {
+export default (props) => {
   return h("input", {
     type: "range",
     min: 0,
     max: 1,
     step: 0.05,
     value: props.ratio,
-    onChange: event => props.onChange(event.target.value)
+    onChange: (event) => props.onChange(event.target.value),
   });
 };

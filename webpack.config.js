@@ -7,5 +7,5 @@ module.exports = async () => ({
     const name = basename(dirname(file)); // Use the parent dir name
     return { ...entries, [name]: file };
   }, {}),
-  output: { filename: "scripts/[name].js" }
+  output: { filename: "scripts/[name].js" },
 });

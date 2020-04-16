@@ -1,7 +1,7 @@
 import { createElement as h } from "react";
 import { humanRatio } from "../comments";
 
-export default props => {
+export default (props) => {
   return h(
     "p",
     {},

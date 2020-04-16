@@ -16,12 +16,12 @@ export default class extends Component {
         minComments: this.props.minComments,
         maxCommentsRatio: this.state.maxCommentsRatio,
         totalComments: this.props.comments.length,
-        shownComments: this._shownComments
+        shownComments: this._shownComments,
       }),
       h(MaxCommentsRatioControl, {
         ratio: this.state.maxCommentsRatio,
-        onChange: ratio => this.setState({ maxCommentsRatio: ratio })
-      })
+        onChange: (ratio) => this.setState({ maxCommentsRatio: ratio }),
+      }),
     ]);
   }
 
@@ -32,7 +32,7 @@ export default class extends Component {
   _updateComments() {
     showOnlyMostReplied({
       comments: this.props.comments,
-      amount: this._shownComments
+      amount: this._shownComments,
     });
   }
 
@@ -40,7 +40,7 @@ export default class extends Component {
     return getCommentsAmountToShow({
       total: this.props.comments.length,
       min: this.props.minComments,
-      maxRatio: this.state.maxCommentsRatio
+      maxRatio: this.state.maxCommentsRatio,
     });
   }
 }

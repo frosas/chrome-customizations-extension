@@ -13,7 +13,7 @@ export default class {
 
   visit(callback) {
     callback(this);
-    this.children.forEach(child => child.visit(callback));
+    this.children.forEach((child) => child.visit(callback));
   }
 
   // All nodes are comments but the root

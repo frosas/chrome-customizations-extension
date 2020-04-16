@@ -5,7 +5,7 @@ const getCommentsTree = () => {
   let reference = tree;
   // Not sure why HN doesn't show some of the comments. E.g.
   // https://news.ycombinator.com/item?id=15630646
-  document.querySelectorAll(".comtr:not(.noshow)").forEach(domNode => {
+  document.querySelectorAll(".comtr:not(.noshow)").forEach((domNode) => {
     const node = new CommentTreeNode({ domNode });
     while (node.domNodeIndent <= reference.domNodeIndent) {
       reference = reference.parent;
@@ -18,7 +18,7 @@ const getCommentsTree = () => {
 
 export const getComments = () => {
   const comments = [];
-  getCommentsTree().visit(node => node.isComment && comments.push(node));
+  getCommentsTree().visit((node) => node.isComment && comments.push(node));
   return comments;
 };
 
@@ -40,7 +40,7 @@ export const showOnlyMostReplied = ({ comments, amount }) => {
  * @param {number} ratio Comments ratio (from 0 to 1).
  * @returns {number} The human representation (a percentage) of the ratio.
  */
-export const humanRatio = ratio => `${Math.ceil(ratio * 100)}%`;
+export const humanRatio = (ratio) => `${Math.ceil(ratio * 100)}%`;
 
 /**
  * @param {number} ratio Comments ratio.
