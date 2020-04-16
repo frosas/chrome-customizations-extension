@@ -5,6 +5,7 @@ import { createElement as h } from "react";
 import ReactDOM from "react-dom";
 import { getComments } from "./comments";
 import Main from "./ui/Main";
+import "./format-blockquotes";
 
 const comments = getComments();
 
