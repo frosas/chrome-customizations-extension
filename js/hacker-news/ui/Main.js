@@ -11,7 +11,9 @@ export default class extends Component {
   }
 
   render() {
-    return h("div", {}, [
+    return h(
+      "div",
+      null,
       h(Legend, {
         minComments: this.props.minComments,
         maxCommentsRatio: this.state.maxCommentsRatio,
@@ -21,8 +23,8 @@ export default class extends Component {
       h(MaxCommentsRatioControl, {
         ratio: this.state.maxCommentsRatio,
         onChange: (ratio) => this.setState({ maxCommentsRatio: ratio }),
-      }),
-    ]);
+      })
+    );
   }
 
   componentDidUpdate() {
