@@ -39,9 +39,11 @@ export const showOnlyMostReplied = ({ comments, amount }) => {
   comments
     .sort((c1, c2) => c2.children.length - c1.children.length)
     .forEach((comment, i) => {
-      const style = comment.domNode.querySelector(".comment").style;
+      const el = comment.domNode.querySelector(".comment");
       const show = i <= amount - 1;
-      style.display = show ? "block" : "none";
+      el.classList[show ? "remove" : "add"](
+        "chrome-customizations-extension-comment--hidden"
+      );
     });
 };
 

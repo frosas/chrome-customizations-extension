@@ -18,5 +18,4 @@ $ npm run dev
 ## TODO
 
 - HN - Make all comments to have the same width (nested comments narrow)
-- HN - Fix collapsing thread not hiding the root comment
 - HN - Use site own expand/collapse mechanism
