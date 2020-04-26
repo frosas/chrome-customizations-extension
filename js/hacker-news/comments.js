@@ -1,5 +1,9 @@
 import CommentTreeNode from "./comments/TreeNode";
 
+/**
+ * @typedef {import('./types').Comment} Comment
+ */
+
 const getCommentsTree = () => {
   const tree = new CommentTreeNode();
   let reference = tree;
@@ -26,6 +30,11 @@ export const getCommentsAmountToShow = ({ total, min, maxRatio }) => {
   return Math.min(total, Math.max(min, ratioToAbsolute(maxRatio, total)));
 };
 
+/**
+ * @param {object} params
+ * @param {Array<Comment>} params.comments
+ * @param {number} params.amount
+ */
 export const showOnlyMostReplied = ({ comments, amount }) => {
   comments
     .sort((c1, c2) => c2.children.length - c1.children.length)
