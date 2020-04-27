@@ -16,7 +16,7 @@
     "watch-lint": "onchange -i '**/*.js' -- npm run lint -- --fix"
   },
   "dependencies": {
-    "concurrently": "^5.1.0",
+    "concurrently": "^5.2.0",
     "glob": "^7.1.6",
     "onchange": "^6.1.1",
     "postcss-cli": "^7.1.0",
