@@ -3,7 +3,7 @@
   "private": true,
   "scripts": {
     "lint": "eslint .",
-    "test": "npm run lint",
+    "test": "concurrently -n lint,build \"npm run lint\" \"npm run build\"",
     "build": "npm run reset-dist && concurrently -n static,styles,js \"npm run build-static\" \"npm run build-styles\" \"npm run build-js\"",
     "reset-dist": "rm -rf dist && mkdir dist",
     "build-static": "cp -a static/. dist",
