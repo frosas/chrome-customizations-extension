@@ -34,10 +34,6 @@
       "css": ["styles/youtube.css"]
     },
     {
-      "matches": ["https://*.wikipedia.org/wiki/*"],
-      "css": ["styles/wikipedia.css"]
-    },
-    {
       "matches": ["https://duckduckgo.com/*"],
       "css": ["styles/duckduckgo.css"]
     }
