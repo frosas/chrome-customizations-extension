@@ -9,8 +9,7 @@
     },
     {
       "matches": ["https://trello.com/*"],
-      "css": ["styles/trello.css"],
-      "js": ["scripts/trello.js"]
+      "css": ["styles/trello.css"]
     },
     {
       "matches": ["https://bank.barclays.co.uk/*"],
