@@ -16,9 +16,8 @@ export default class {
     this.children.forEach((child) => child.visit(callback));
   }
 
-  // All nodes are comments but the root
   get isComment() {
-    return this.domNode;
+    return this.domNode; // All nodes but the root are comments
   }
 
   get domNodeIndent() {
