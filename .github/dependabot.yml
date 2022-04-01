@@ -4,12 +4,3 @@ updates:
   directory: "/"
   schedule:
     interval: monthly
-    day: saturday
-  open-pull-requests-limit: 99
-  ignore:
-  - dependency-name: react
-    versions:
-    - 17.0.2
-  - dependency-name: husky
-    versions:
-    - 5.1.2
