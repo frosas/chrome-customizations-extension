@@ -21,8 +21,8 @@
     "glob": "^7.1.7",
     "onchange": "^7.1.0",
     "precss": "^4.0.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.2"
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0"
   },
   "devDependencies": {
     "@frosas/eslint-config": "^5.0.0",
