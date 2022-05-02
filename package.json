@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "concurrently": "^7.0.0",
-    "glob": "^7.1.7",
+    "glob": "^8.0.1",
     "onchange": "^7.1.0",
     "precss": "^4.0.0",
     "react": "^17.0.1",
