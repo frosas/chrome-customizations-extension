@@ -1,4 +1,4 @@
-import { createElement as h } from "react";
+import { createElement as h } from "react"
 
 export default (props) => {
   return h("input", {
@@ -8,5 +8,5 @@ export default (props) => {
     step: 0.05,
     value: props.ratio,
     onChange: (event) => props.onChange(event.target.value),
-  });
-};
+  })
+}

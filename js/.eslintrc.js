@@ -8,4 +8,4 @@ module.exports = {
     node: false,
     browser: true,
   },
-};
+}

@@ -4,4 +4,4 @@
  * @property {Element} domNode
  */
 
-export default {};
+export default {}
