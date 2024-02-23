@@ -7,13 +7,13 @@ $ npm run build
 
 _Chrome_ → _Extensions_ → Check _Developer mode_ → _Load unpacked extension_ → Select the `dist` directory.
 
-Once installed, the extension can be reloaded by clicking _Update extensions now_ (⌘R).
-
 ### Development
 
 ```bash
 $ npm run dev
 ```
+
+After every change, the extension needs to be updated in chrome://extensions/
 
 ## TODO
 
