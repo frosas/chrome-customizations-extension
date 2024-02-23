@@ -2,14 +2,15 @@
   "name": "chrome-customizations-extension",
   "private": true,
   "scripts": {
+    "concurrently": "concurrently -c auto",
     "lint": "eslint .",
-    "test": "concurrently -n lint,build \"npm run lint\" \"npm run build\"",
-    "build": "npm run reset-dist && concurrently -n static,styles,js \"npm run build-static\" \"npm run build-styles\" \"npm run build-js\"",
+    "test": "npm run concurrently -- -n lint,build npm:lint npm:build",
+    "build": "npm run reset-dist && npm run concurrently -- -n static,styles,js npm:build-static npm:build-styles npm:build-js",
     "reset-dist": "rm -rf dist && mkdir dist",
     "build-static": "cp -a static/. dist",
     "build-styles": "postcss styles/**/*.pcss --use precss --dir dist/styles --ext css --verbose",
     "build-js": "webpack --mode production",
-    "dev": "npm run reset-dist && concurrently -k -n static,styles,js,lint \"npm run watch-static\" \"npm run watch-styles\" \"npm run watch-js\" \"npm run watch-lint\"",
+    "dev": "npm run reset-dist && npm run concurrently -- -k -n static,styles,js,lint npm:watch-static npm:watch-styles npm:watch-js npm:watch-lint",
     "prepare": "husky install",
     "watch-static": "onchange -i 'static/**/*' -- npm run build-static",
     "watch-styles": "npm run build-styles -- --watch",
@@ -17,7 +18,7 @@
     "watch-lint": "onchange -i '**/*.js' -- npm run lint -- --fix"
   },
   "dependencies": {
-    "concurrently": "^7.0.0",
+    "concurrently": "^8.2.2",
     "glob": "^8.0.1",
     "onchange": "^7.1.0",
     "precss": "^4.0.0",
