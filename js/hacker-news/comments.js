@@ -1,4 +1,4 @@
-import CommentTreeNode from "./comments/TreeNode"
+import CommentTreeNode from "./comments/TreeNode.js"
 
 /**
  * @typedef {import('./types').Comment} Comment

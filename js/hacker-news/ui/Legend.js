@@ -1,5 +1,5 @@
 import { createElement as h } from "react"
-import { humanRatio } from "../comments"
+import { humanRatio } from "../comments.js"
 
 export default (props) => {
   return h(

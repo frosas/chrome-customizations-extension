@@ -3,9 +3,9 @@
 
 import { createElement as h } from "react"
 import ReactDOM from "react-dom"
-import { getComments } from "./comments"
-import Main from "./ui/Main"
-import "./format-blockquotes"
+import { getComments } from "./comments.js"
+import Main from "./ui/Main.js"
+import "./format-blockquotes.js"
 
 const comments = getComments()
 

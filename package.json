@@ -1,6 +1,7 @@
 {
   "name": "chrome-customizations-extension",
   "private": true,
+  "type": "module",
   "scripts": {
     "concurrently": "concurrently -c auto",
     "lint": "eslint .",
