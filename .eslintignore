@@ -1,4 +1,0 @@
-# Don't ignore hidden files
-!**/.*.js
-
-dist
