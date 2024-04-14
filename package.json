@@ -4,7 +4,7 @@
   "type": "module",
   "scripts": {
     "concurrently": "concurrently -c auto",
-    "lint": "eslint",
+    "lint": "eslint .",
     "test": "npm run concurrently -- -n lint,build npm:lint npm:build",
     "build": "npm run reset-dist && npm run concurrently -- -n static,styles,js npm:build-static npm:build-styles npm:build-js",
     "reset-dist": "rm -rf dist && mkdir dist",
@@ -27,8 +27,8 @@
     "react-dom": "^17.0.2"
   },
   "devDependencies": {
-    "@frosas/eslint-config": "^7.0.0",
-    "eslint": "^9.0.0",
+    "@frosas/eslint-config": "^8.1.0",
+    "eslint": "^8.57.0",
     "husky": "^8.0.1",
     "postcss": "^8.3.1",
     "postcss-cli": "^9.0.1",
