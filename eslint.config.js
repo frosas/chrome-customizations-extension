@@ -1,7 +1,6 @@
 // See https://eslint.org/docs/latest/use/configure/
 
-import globals from "globals"
-import frosasConfig, { config } from "@frosas/eslint-config"
+import frosasConfig, { config, globals } from "@frosas/eslint-config"
 
 export default config(
   ...frosasConfig,
